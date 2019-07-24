@@ -72,7 +72,7 @@ for T in range(int(input())):
             alphabet_list.append(grade)
     #print(alphabet_list)
 
-    for i in range(N+1):
+    for i in range(N):
         scores = list(map(int, input().split()))
         scores_board.append(scores)
         # print(scores_board)
@@ -102,42 +102,3 @@ for T in range(int(input())):
             #print(value, key)
             #print(alphabet_list[count-1])
             print(f'#{T+1} {alphabet_list[count-1]}')
-
-
-'''         
-    원하는 입력번째 학생의 스코어를 알파벳으로 변환
-'''
-
-
-'''
-87 59 88
-99 94 78
-'''
-
-
-'''
-t = int(input())
-for i in range(t):
-    N, K = map(int, input().split(' '))
-    scores = []
-    grade = ['A+', 'A0', 'A-', 'B+', 'B0', 'B-', 'C+', 'C0', 'C-', 'D0']
-    for _ in range(N):
-        mid, fin, work = map(int, input().split(' '))
-        scores.append(mid * 0.35 + fin * 0.45 + work * 0.2)
-    students = {}
-    j = 0
-    count = 0
-    while j < 10:
-        for number, score in enumerate(scores):
-            if score == max(scores):
-                students[number+1] = grade[j]
-                scores[number] = 0
-                count += 1
-                if count == N/10:
-                    j += 1
-                    count = 0
-                if j == 10:
-                    break
-    print('#{}'.format(i+1), students[K])
-
-'''
