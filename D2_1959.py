@@ -11,6 +11,9 @@ Max를 써서 찾는다.
 Count써서 특정 3이될경우 계속 반복하고
 애초에 들어올때 b의 문자열보다 작은 인덱스사 필요하고
 
+
+
+
 '''
 
 for t in range(int(input())): # 10
@@ -23,6 +26,12 @@ for t in range(int(input())): # 10
     3 6 -7 5 4
     
     #1 30
+    
+    특정 조건이라면,
+    Ai, Bi = Bi, Ai
+
+
+    혜준님 다르게 풀었음
     '''
 
     A = list(map(int, input().split())) # [1, 5, 3]
@@ -31,46 +40,35 @@ for t in range(int(input())): # 10
     temp_list = []
     sum_list = []
 
-    IndexForTotal_Bi = Bi - 2
-    IndexForTotal_Ai = Ai - 2
+    IndexForTotal = abs(Ai - Bi) + 1
 
-    try:
-        if Ai < Bi: # Bi가 더 큰 경우 Ai의 인덱스는 고정된다.
-            count = 0
-            for Idx in range(IndexForTotal_Bi):
-                total = 0
-                Idx += count
+    if Ai <= Bi: # Bi가 더 큰 경우 Ai의 인덱스는 고정된다.
+        count = 0
+        for Idx in range(IndexForTotal):
+            total = 0
+            Idx += count
 
-                for Idx_Ai in range(Ai):
-                    C = B[Idx+count] * A[Idx_Ai]
-                    count += 1
-                    temp_list.append(C)
-
-                sum_list = sum(temp_list)
+            for Idx_Ai in range(Ai):
+                C = B[Idx+count] * A[Idx_Ai]
+                count += 1
+                temp_list.append(C)
 
             print(temp_list)
-            print(f'#{t + 1} {max(sum_list)}')
+            print(f'#{t + 1} {max(temp_list)}')
 
 
-        else:
-            count = 0
-            for Idx in range(IndexForTotal_Ai):
-                total = 0
-                Idx += count
+    elif Ai > Bi:
+        count = 0
+        for Idx in range(IndexForTotal):
+            total = 0
+            Idx += count
 
-                for Idx_Bi in range(Bi):
-                    C = B[Idx_Bi] * A[Idx+count]
-                    temp_list.append(C)
-
-                sum_list = sum(temp_list)
+            for Idx_Bi in range(Bi):
+                C = B[Idx_Bi] * A[Idx+count]
+                temp_list.append(C)
 
             print(temp_list)
-            print(f'#{t + 1} {max(sum_list)}')
-
-
-
-    except IndexError:
-        continue
+            print(f'#{t + 1} {max(temp_list)}')
 
 
 
