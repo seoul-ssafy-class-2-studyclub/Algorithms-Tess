@@ -16,6 +16,7 @@
 '''
 
 ## 딕셔너리, 인덱스 중요했던 문제
+## import datetime 쓰지않고 문제 풀기
 
 for T in range(int(input())):
 
@@ -56,3 +57,26 @@ total = result1 + result2 + day_count + 1
         total = result1 + result2 + day_count + 1
 
         print(f'#{T+1} {total}')
+
+
+'''
+제출용
+
+DD = {1:31, 2:28, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
+for T in range(int(input())):
+    D = list(map(int, input().split()))
+    if D[0] == D[2]:
+        print(f'#{T+1} {DD[D[0]]}')
+    elif D[0] != D[2]:
+        R1 = D[3]
+        C = 0
+        for M, Y in DD.items():
+            if D[2]-1 >= M >= D[0]+1:
+                C += DD[M]
+            if M == D[0]:
+                R2 = Y - D[1]
+            else:
+                continue
+        S = R1 + R2 + C + 1
+        print(f'#{T+1} {S}')
+'''

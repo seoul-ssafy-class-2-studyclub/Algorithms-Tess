@@ -14,13 +14,12 @@ K 번째 학생의 학점을 출력하는 프로그램을 작성
 
 필수조건:
 #
-총점으로 먼저 sort후
-평점으로 변환하고,
-처음받은 리스트와 비교하
-index로 접근해야한다.
-그후 함수로 만든 평가에 알파벳으로 반환값 주기!
+딕셔너리로 입력받는 순서대로 번호를 매긴 후,
+총점으로 sort하고,
+그후 함수로 만든 평가에 알파벳으로 반환값을 준다.
 
-받은학생수/10 의 비율로 정해짐
+즉, 알파벳은 받은학생수/10 의 비율로 정해지므로, 해당 값을 만큼 알파벳들을 리스트로 받아서 준비하고,
+이에따라 반환값이 주어진다.
 
 A+
 A0
@@ -62,13 +61,13 @@ for T in range(int(input())):
                     # K 번째 학생의 총점과 다른 학생의 총점이 동일한 경우는 입력으로 주어지지 않는다.
     scores_board = []
     student_dict = {}
-
     sorted_board = []
+
     alphabet = ['A+', 'A0', 'A-', 'B+', 'B0', 'B-', 'C+', 'C0', 'C-', 'D0']
     alphabet_list = []
 
     for grade in alphabet:
-        for i in range(N//10):
+        for i in range(N//10): #받은 학생수만큼 10을 나눈 몫으로 range를 구해서 리스트에 비율만큼의 알파벳을 넣는다.
             alphabet_list.append(grade)
     #print(alphabet_list)
 
@@ -90,15 +89,14 @@ for T in range(int(input())):
         except:
             continue
 
-    student_dict_sorted = dict(sorted(student_dict.items(), reverse=True))
+    student_dict_sorted = dict(sorted(student_dict.items(), reverse=True)) # 내림순으로 순서를 정렬한 딕셔너리를 만든다.
     #print(student_dict_sorted)
     # [(99.45, 4), (96.25, 7), (92.55000000000001, 2), (88.8, 3), (85.85000000000001, 6), (85.75, 10), (85.5, 9), (74.6, 1), (72.35, 5), (68.95, 8)]
     # {99.45: 4, 96.25: 7, 92.55000000000001: 2, 88.8: 3, 85.85000000000001: 6, 85.75: 10, 85.5: 9, 74.6: 1, 72.35: 5, 68.95: 8}
 
-    count = 0
+    # 딕셔너리 내의 값과 알고싶은 학생번호가 같을 때의 알파벳리스트에서 리스트를 인덱스로 찾아온다.
+    count = 0 # 이를 위해서 count를 설정하여 한 번 돌때마다 더해줘서 인덱스를 찾을 수 있도록 설정해준다.
     for key, value in student_dict_sorted.items():
         count += 1
         if value == K:
-            #print(value, key)
-            #print(alphabet_list[count-1])
-            print(f'#{T+1} {alphabet_list[count-1]}')
+            print(f'#{T+1} {alphabet_list[count-1]}') #인덱스는 0부터 시작하기때문에 돈만큼에서 -1을 해줘야 한다.
