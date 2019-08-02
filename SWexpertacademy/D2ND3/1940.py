@@ -22,6 +22,8 @@ RC 카의 초기 속도는 0 m/s
 #9 48
 #10 111
 
+
+
 '''
 
 for T in range(int(input())):
