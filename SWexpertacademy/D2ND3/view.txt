@@ -1,0 +1,22 @@
+def getMax(idx):
+    tmax = heights[idx - 2]
+
+    if tmax < heights[idx - 1]: tmax = heights[idx - 1]
+    if tmax < heights[idx + 1]: tmax = heights[idx + 1]
+    if tmax < heights[idx + 2]: tmax = heights[idx + 2]
+
+    return tmax
+
+TC = 10
+for tc in range(1, TC+1):
+
+    N = int(input())
+    heights = list(map(int, input().split()))
+    view = 0
+
+    for i in range(2, N - 2):
+        side = getMax(i)
+        if side < heights[i] :
+            view += heights[i] - side
+
+    print("#%d %d" % (tc, view))
