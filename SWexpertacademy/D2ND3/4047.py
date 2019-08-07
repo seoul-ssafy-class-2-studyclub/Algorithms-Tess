@@ -8,9 +8,9 @@ for tc in range(1, T+1):
     cards = list(map(str, input()))
     list_len = len(cards)
     big_board = []
-    result = 0
+    result = ''
 
-    for ix in range(4): #0 1 2 3
+    for ix in range(list_len//3): #0 1 2 3
         new = []
         for i in range(3): # 0 1 2
             new.append(cards[ix*3+i]) # 0*2+0
@@ -26,6 +26,8 @@ for tc in range(1, T+1):
                 result = 'ERROR'
 
     if result != 'ERROR':
-        print(f"#{tc} {cards_total['S']} {cards_total['D']} {cards_total['H']} {cards_total['C']}")
+        result = '#{} {} {} {} {}'.format(tc, cards_total['S'], cards_total['D'], cards_total['H'], cards_total['C'])
+        print(result)
     else:
-        print(f'#{tc} {result}')
+        print('#{} ERROR'.format(tc))
+
