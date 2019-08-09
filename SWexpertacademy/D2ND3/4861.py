@@ -2,7 +2,7 @@ import sys
 sys.stdin = open('4861.txt', 'r')
 
 
-#########회문
+#########회문이 뭔지 찾는 문제
 from pprint import pprint
 
 def column(arr, N):
