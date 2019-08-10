@@ -27,6 +27,8 @@ word의 처음 i라는 인덱스에 +1씩해가면서 비교한다.
 '''
 그러면 보드를 만드는것부터 시작
 '''
+
+## 회문 길이는 정해져 있지 않고, 그래서 그 회문을 찾고, 길이를 검색을 통해 찾아 최대 길이를 찾는 것
 def Columntorow(arr, N):
     result = []
     for iy in range(N):
@@ -43,8 +45,8 @@ def Search(arr, N):
     for ar in arr:
 	# idx 부터 idx+idx2 까지가 아니라 idx 부터 idx2까지 검색하기
         for idx in range(0, N-1):
-            for idx2 in range(idx+1, N+1):
-                temp = ar[idx:idx2]
+            for idx2 in range(idx+1, N+1): ## 이 부분,
+                temp = ar[idx:idx2] ## 이 부분
                 if ar[idx:idx2] == temp[::-1]:
                     num_list.append(len(temp))
     return set(num_list)
