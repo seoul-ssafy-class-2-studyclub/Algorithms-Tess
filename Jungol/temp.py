@@ -116,3 +116,94 @@
 #     for j in range(1,5):
 #         print('({}, {})'.format(i, j), end=' ')
 #     print()
+
+# A, B = map(int, input().split())
+# new = []
+# for i in range(B, A+1):
+#     new.append(i)
+# newone = list(reversed(new))
+#
+#
+# for n in range(1, 10):
+#     for id in newone:
+#         res = id*n
+#         if res >= 10:
+#             print('{1} * {2} = {0}'.format(res, id, n), end='   ')
+#         elif res < 10:
+#             print('{1} * {2} =  {0}'.format(res, id, n), end='   ')
+#     print()
+
+
+# A = int(input())
+# total = 0
+# cnt = 0
+# for a in range(1, A+1):
+#     if a%2 == 1:
+#         total += a
+#         cnt += 1
+#         if cnt == 10:
+#             print(cnt, total)
+
+# A = int(input())
+# for a in range(1, A+1):
+#     print('*'*a)
+
+
+# A = int(input())
+# for i in range(1, 100):
+#     res = i*A
+#     print(res, end=' ')
+#     if res%10 == 0:
+#         break
+
+
+
+###88 123 659 15 443 1 99 313 105 48
+# def under100(arr):
+#     new = [a for a in arr if a < 100]
+#     temp = 0
+#     for n in new:
+#         if temp < n:
+#             temp = n
+#     return temp
+#
+#
+# def over100(arr):
+#     new = [a for a in arr if a >= 100]
+#     temp = new[0]
+#     for n in new:
+#         if temp > n:
+#             temp = n
+#     return temp
+#
+# A = list(map(int, input().split()))
+# print(under100(A), over100(A))
+
+# A = int(input())
+# for a in range(A, 0, -1):
+#     print('*'*a)
+# for a in range(1, A+1):
+#     print('*'*a)
+
+
+# A = int(input())
+# for a in range(A, 0, -1):
+#     if a == A:
+#         print('*'*a)
+#     if a < A:
+          # 3-3=0 3-2=1 3-1=2
+#         print(' ' * (A - a), end='')
+#         print('*'*a)
+# '''
+# ***
+#  **
+#   *
+# '''
+
+
+
+
+
+
+
+
