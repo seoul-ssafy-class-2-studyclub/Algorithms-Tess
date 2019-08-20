@@ -1,0 +1,32 @@
+
+def is_palH(r, c):
+    for i in range(N//2):
+        if mat[r + i][c] != mat[r + N - 1 - i][c]:
+            return 0
+    return 1
+
+def is_pal(r, c):
+    for i in range(N//2):
+        if mat[r][c + i] != mat[r][c + N - 1 - i]:
+            return 0
+    return 1
+
+def calpal():
+    cnt = 0
+    for i in range(8):
+        for j in range(8 - N + 1):
+            cnt += is_pal(i, j)
+
+    for i in range(8 - N + 1):
+        for j in range(8):
+            cnt += is_palH(i, j)
+
+    return cnt
+
+for tc in range(1, 11):
+    N = int(input())
+    mat = [0] * 8
+    for i in range(8):
+        mat[i] = list(input())
+
+    print("#%d %d"%(tc , calpal()))
