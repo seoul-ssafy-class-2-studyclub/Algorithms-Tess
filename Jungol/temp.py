@@ -200,6 +200,112 @@
 #   *
 # '''
 
+# A = int(input())
+# for i in range(1, A+1):
+#     print('*'*i)
+# for i2 in range(A-1, 0, -1):
+#     print('*'*i2)
+
+# n = int(input())
+# for i in range(n):
+#     for j in range(i):
+#         print(' ', end='')
+#     for j in range(n * 2 - 1 - i * 2):
+#         print('*', end='')
+#     print()
+#
+# for i in range(1, n):
+#     for j in range(n - i - 1):
+#         print(' ', end='')
+#     for j in range(i * 2 + 1):
+#         print('*', end='')
+#     print()
+
+# A = list(map(int, input().split()))
+# evensum = 0
+# oddsum = 0
+# for i in range(10):
+#     if i%2 == 0:
+#         evensum += A[i]
+#     else:
+#         oddsum += A[i]
+#
+# print('sum :', oddsum)
+# print('avg :', evensum/5)
+
+# 95 100 88 65 76 89 58 93 77 99
+#  0 1   2  3  4  5  6  7  8  9
+# 입력순으로 따지면 인덱스랑 다르다는 것 명심.
+
+
+# # 선택정렬
+# A = list(map(int, input().split()))
+#
+# for i in range(9):
+#     temp = i
+#     for j in range(i+1, 10):
+#         if A[j] > A[temp]:
+#             temp = j
+#     A[i], A[temp] = A[temp], A[i]
+#
+# for i in range(10):
+#     print(A[i], end=' ')
+
+# A = list(map(int, input().split()))
+# res = 0
+# for i in range(0, len(A), 2):
+#     res += A[i]
+# print(res)
+
+# A = list(map(int, input().split()))
+# evensum = 0
+# oddsum = 0
+# for i in range(10):
+#     if i%2 == 0:
+#         evensum += A[i]
+#     else:
+#         oddsum += A[i]
+#
+# print('odd :', evensum)
+# print('even :', oddsum)
+
+# A = list(map(int, input().split()))
+# new = []
+# for a in A:
+#     if a == -1:
+#         new += A[-4: -1]
+# for n in new:
+#     print(n, end=' ')
+
+# A = list(map(int, input().split()))
+# temp = -1000
+# temp2 = 9999
+#
+# for a in A:
+#     if a == 999:
+#         break
+#     if a > temp:
+#         temp = a
+#     if a < temp2:
+#         temp2 = a
+# print('max :', temp)
+# print('min :', temp2)
+
+
+
+# A = list(map(int, input().split()))
+# total5 = []
+# total = 0
+# for a in A:
+#     if a == 0:
+#         break
+#     if a != 0:
+#         if a%5 == 0:
+#             total5.append(a)
+#             total += a
+# print('Multiples of 5 :', len(total5))
+# print('sum :', total)
+# print('avg :', total/len(total5))
 
 
 

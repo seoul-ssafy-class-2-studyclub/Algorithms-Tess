@@ -1,6 +1,7 @@
 import sys
 sys.stdin = open('1267.txt', 'r')
 
+
 def dfs_stack(arr, start_node):
 
     visit = []
@@ -60,7 +61,6 @@ for tc in range(1, 11):
         #print(res)
         result.extend(res)
     print(f'#{tc}', ' '.join(map(str, result)))
-
 
 
 
