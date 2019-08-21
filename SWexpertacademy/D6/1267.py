@@ -42,8 +42,12 @@ for tc in range(1, 11):
     V, E = map(int, input().split())
     mat = list(map(int, input().split()))
 
+    # 갈수있는곳 진출차수 인접리스트
     adj_list = [[] for _ in range(V+1)] # 1001까지 있다. index error 방지
+
+    # 나한테 올애들의/ 진입차수의 수
     adj_list_counting = [0 for _ in range(V+1)]
+
     for i in range(len(mat)): #앞으로 갈 노드
         if i%2 == 0:
             adj_list[mat[i]].append(mat[i+1])

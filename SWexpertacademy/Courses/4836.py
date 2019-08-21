@@ -7,7 +7,7 @@ from pprint import pprint
 ## 도형보는법 주의
 ## 보라색은 길이*2 임을 주
 
-T = int(input())
+T = int(input()) # 테스트 케이스를 받는다.
 for tc in range(1, T+1):
     R = int(input())
     r_list = []
@@ -16,10 +16,10 @@ for tc in range(1, T+1):
         r_list.append(temp_list)
     #print(r_list)
 
-    big_board = [[0] * 10 for i in range(10)]
+    big_board = [[0] * 10 for i in range(10)] # matrix를 만든다. 2차원배열
     #print(len(big_board))
 
-    for ri in range(R):
+    for ri in range(R): # R만큼을 돈다.
         # x1 = r_list[ri][0]
         # y1 = r_list[ri][1]
         # x2 = r_list[ri][2]
