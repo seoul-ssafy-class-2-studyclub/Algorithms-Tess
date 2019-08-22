@@ -29,7 +29,7 @@ def check(board):
     final.append(left_cnt)
 
     # 대각선 오른쪽부터
-    # 4,0 3,1 2,2 1,3 0, 4
+    # 4,0 3,1 2,2 1,3 0,4
     right_cnt = 0
     for col in range(4, -1, -1):
         if board[col][4-col] == 'B':
@@ -53,6 +53,7 @@ speakers = []
 for _ in range(5):
     speakers.extend(list(map(str, input().split())))
 
+## while 안에서 flag 사용법
 flag = False
 cnt = 0
 while flag == False:
@@ -63,11 +64,12 @@ while flag == False:
             if flag == True:
                 break
             for row in range(5):
-                if cnt <= 12:
+                if cnt < 11:
                     if Bingo_Board[col][row] == speakers[si]:
                         Bingo_Board[col][row] = 'B'
                         cnt += 1
-                elif cnt > 12:
+                # 안에서 카운트
+                elif cnt >= 11:
                     if Bingo_Board[col][row] == speakers[si]:
                         Bingo_Board[col][row] = 'B'
                         cnt += 1
