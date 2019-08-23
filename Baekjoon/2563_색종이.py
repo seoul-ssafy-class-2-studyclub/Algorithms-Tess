@@ -34,6 +34,7 @@ sys.stdin = open('2563.txt', 'r')
 #     cnt += sum(item)
 # print(cnt)
 
+
 mat = [[0]*100 for _ in range(100)]
 for _ in range(int(input())):
     x, y = map(int, input().split())

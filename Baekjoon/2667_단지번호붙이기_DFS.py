@@ -1,0 +1,130 @@
+'''
+3
+7
+8
+9
+'''
+
+import sys
+sys.stdin = open('2667.txt', 'r')
+
+
+def change(iy, ix):
+    cnt = 0
+    stack = []
+    stack.append((iy, ix))
+    #print(stack)
+
+    while len(stack) > 0:
+        iy, ix = stack.pop()
+
+        if board[iy][ix] != 0: # 1이라면서 버려진다.
+            board[iy][ix] = 0
+            cnt += 1
+
+            if 0 < ix < (N-1) and 0 < iy < (N-1):
+                for y, x in all_direction:
+                    tempx = x+ix
+                    tempy = y+iy
+                    if board[tempy][tempx] == 1:
+                        stack.append((tempy, tempx))
+
+            if (N-1) == ix and (N-1) == iy:
+                for y, x in [[0, -1], [-1, 0]]:
+                    tempx = x + ix
+                    tempy = y + iy
+                    if board[tempy][tempx] == 1:
+                        stack.append((tempy, tempx))
+
+            if 0 == ix and 0 == iy:
+                for y, x in [[0,1], [1,0]]:
+                    tempx = x + ix
+                    tempy = y + iy
+                    if board[tempy][tempx] == 1:
+                        stack.append((tempy, tempx))
+
+            if (N-1) == ix and 0 == iy:
+                for y, x in [[0, -1], [1, 0]]:
+                    tempx = x + ix
+                    tempy = y + iy
+                    if board[tempy][tempx] == 1:
+                        stack.append((tempy, tempx))
+
+            if 0 == ix and (N-1) == iy:
+                for y, x in [[-1, 0], [0, 1]]:
+                    tempx = x + ix
+                    tempy = y + iy
+                    if board[tempy][tempx] == 1:
+                        stack.append((tempy, tempx))
+
+            if 0 < ix < (N-1) and 0 == iy:
+                for y, x in [[0, -1], [1,0], [0, 1]]:
+                    tempx = x + ix
+                    tempy = y + iy
+                    if board[tempy][tempx] == 1:
+                        stack.append((tempy, tempx))
+
+            if 0 < iy < (N-1) and 0 == ix:
+                for y, x in [[-1, 0], [1,0], [0, 1]]:
+                    tempx = x + ix
+                    tempy = y + iy
+                    if board[tempy][tempx] == 1:
+                        stack.append((tempy, tempx))
+
+            if 0 < iy < (N-1) and (N-1) == ix:
+                for y, x in [[-1, 0], [0,-1], [1, 0]]:
+                    tempx = x + ix
+                    tempy = y + iy
+                    if board[tempy][tempx] == 1:
+                        stack.append((tempy, tempx))
+
+            if (N-1) == iy and 0 < ix < (N-1):
+                for y, x in [[0, -1], [-1,0], [0, 1]]:
+                    tempx = x + ix
+                    tempy = y + iy
+                    if board[tempy][tempx] == 1:
+                        stack.append((tempy, tempx))
+
+
+
+
+
+    return cnt
+
+
+def check():
+    cnt = 0
+    for iy in range(N):
+        for ix in range(N):
+            if board[iy][ix] == 0:
+                cnt += 1
+                if cnt == (N*N):
+                    return False
+            else:
+                return True
+
+
+
+N = int(input())
+board = [list(map(int, input())) for _ in range(N)]
+all_direction = [[-1,0], [0,-1], [1,0], [0,1]]
+
+houses = 0
+flag = True
+number_of_houses = []
+while flag == True:
+    for iy in range(N):
+        if flag == False:
+            break
+        for ix in range(N):
+            if board[iy][ix] == 1:
+                res = change(iy, ix)
+                number_of_houses.append(res)
+                houses += 1
+                flag = check()
+                if flag == False:
+                    break
+
+print(houses)
+for res in sorted(number_of_houses):
+    print(res)

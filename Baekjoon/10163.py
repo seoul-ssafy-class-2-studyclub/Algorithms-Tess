@@ -24,11 +24,15 @@ def check(arr):
         cnt_list.append(cnt)
     return cnt_list
 
+# 색종이 수
 N = int(input())
+# 보드판
 board = [ [0]*101 for _ in range(101) ]
+# 색종이 이름 == 숫자 (명시적으로!, 그냥 1, N+1로 해도 됨)
 num = [ _ for _ in range(1, N+1, 1) ]
 
 for n in range(1, N+1):
+    # ix, iy 시작점  ix2 너비 iy2 높이
     ix, iy, ix2, iy2 = map(int, input().split())
     # ix+ix2 끝점
     # iy+iy2 끝
@@ -36,6 +40,7 @@ for n in range(1, N+1):
         for x in range(ix, (ix+ix2)):
             board[y][x] = n
 
+# 색칠이 끝나면 check한다.
 res = check(board)
 
 for result in res:
