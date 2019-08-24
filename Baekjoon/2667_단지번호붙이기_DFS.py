@@ -12,13 +12,13 @@ sys.stdin = open('2667.txt', 'r')
 def change(iy, ix):
     cnt = 0
     stack = []
-    stack.append((iy, ix))
+    stack.append((iy, ix)) # 처음 1을 만난 iy, ix 부터 시작하기 위해 스택에 넣는다.
     #print(stack)
 
-    while len(stack) > 0:
+    while len(stack) > 0: # stack의 길이가 []가 될때까지, 아래를 실행
         iy, ix = stack.pop()
 
-        if board[iy][ix] != 0: # 1이라면서 버려진다.
+        if board[iy][ix] != 0: # 문제해결: 1면 pop한 iy, ix는 버려진다. (중복이기때문에)
             board[iy][ix] = 0
             cnt += 1
 
@@ -84,10 +84,6 @@ def change(iy, ix):
                     tempy = y + iy
                     if board[tempy][tempx] == 1:
                         stack.append((tempy, tempx))
-
-
-
-
 
     return cnt
 
