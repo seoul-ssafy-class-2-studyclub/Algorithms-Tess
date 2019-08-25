@@ -1,3 +1,4 @@
+
 '''
 3
 7
@@ -131,11 +132,29 @@ for res in sorted(number_of_houses):
 '''
 범위를 한 번에 조절가능
 adj = [[0,1], [0,-1], [1,0], [-1,0], [1,1], [1,-1], [-1,1], [-1,-1]] 
- def checkIsland(i,j):                   # i,j에 대해 그 주변을 조사하여 같은 섬인 땅을 같은 숫자로 표시해주는 함수
-        base_list[i][j] = -(cnt+1)
-        for [dx,dy] in adj:
-            if 0 <= i+dx < N and 0 <= j+dy < N and base_list[i+dx][j+dy] > 0:
-                base_list[i+dx][j+dy] = -(cnt+1)
-                checkIsland(i+dx, j+dy)
+def checkIsland(i,j):                   # i,j에 대해 그 주변을 조사하여 같은 섬인 땅을 같은 숫자로 표시해주는 함수
+    base_list[i][j] = -(cnt+1)
+    for [dx,dy] in adj:
+        if 0 <= i+dx < N and 0 <= j+dy < N and base_list[i+dx][j+dy] > 0:
+            base_list[i+dx][j+dy] = -(cnt+1)
+            checkIsland(i+dx, j+dy)
+
+###########
+dx = [0, 1, 1, 1, 0, -1, -1, -1]
+dy = [1, 1, 0, -1, -1, -1, 0, 1]
+
+board[y][x] = -1
+queue = [x, y]
+while queue:
+    x = queue.pop(0)
+    y = queue.pop(0)
+    for idx in range(8):
+        xi = x + dx[idx]
+        yi = y + dy[idx]
+        if 0 <= xi < N and 0 <= yi < N and board[yi][xi] >= 1:
+            board[yi][xi] = -1
+            queue.append(xi)
+            queue.append(yi)
+return 1
 
 '''
