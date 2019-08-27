@@ -8,13 +8,14 @@ for tc in range(1, int(input())+1):
 
 
     counting = []
-    for ny in range(N-M+1):
+    for ny in range(N-M+1): # 이 부분 핸들링 중요!
         for nx in range(N-M+1):
             cnt = 0
             for my in range(M):
                 for mx in range(M):
                     Y = ny + my
                     X = nx + mx
+                    # 매우 유용!
                     if 0 <= Y < N-1 or 0 <= X < N-1:
                         cnt += board[Y][X]
             counting.append(cnt)
