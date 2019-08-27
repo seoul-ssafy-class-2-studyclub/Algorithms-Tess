@@ -33,7 +33,7 @@ for tc in range(1, T+1):
     iy, ix = start_point
     stack.append((iy, ix))
 
-    # vist한 곳은 다시 방문하지 않기 위해서 표시
+    # visit한 곳은 다시 방문하지 않기 위해서 표시
     visited = [[False]*N for _ in range(N)]
     res = 0
 
