@@ -25,3 +25,5 @@ for tc in range(int(input())):
         result += 1 + (2 ** quotient)
 
     print('#{} {}'.format(tc + 1, result))
+
+
