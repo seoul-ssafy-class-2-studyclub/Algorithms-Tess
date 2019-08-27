@@ -14,7 +14,7 @@ def bfs(y, x):
         for i in range(4):
             xi = x + dx[i]
             yi = y + dy[i]
-            if 0 <= xi < M and 0 <= yi < N and not vis[yi][xi]:
+            if 0 <= xi < M and 0 <= yi < N and not vis[yi][xi]: # False면,
                 if arctic[yi][xi] == 0 and arctic[y][x] > 0:
                     arctic[y][x] -= 1
                 elif arctic[yi][xi] >= 1:
@@ -26,13 +26,13 @@ def bfs(y, x):
 
 N, M = map(int, input().split())
 arctic = []
-for i in range(N):
+for _ in range(N):
     arctic.append(list(map(int, input().split())))
 
 cnt = 0
 time = -1
-while cnt < 2:
-    vis = [[False] * M for i in range(N)]
+while cnt < 2: # 0,1일때, 돈다. # cnt가 2덩어리 이상일때 멈춤
+    vis = [[False] * M for _ in range(N)]
     cnt = 0
     is_fin = True
     for j in range(N):

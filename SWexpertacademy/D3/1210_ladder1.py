@@ -18,13 +18,15 @@ for _ in range(10):
 
     all_directions = [[0, 1],[0, -1],[-1, 0]]
 
+    #
     tempdy = 99
     tempdx = goal_index
+
 
     while tempdy >= 0: ######## 실수: while문 제어
 
         if tempdy == 0:
-            print(f'#{T}',tempdx)  # 여기까지 안온다.
+            print(f'#{T}',tempdx)
             break
 
         elif tempdx == 0:
