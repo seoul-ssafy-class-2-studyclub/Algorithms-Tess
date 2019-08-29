@@ -43,6 +43,7 @@ for _ in range(int(input())):
     for iy in range(y, y+10):
         for ix in range(x, x+10):
             mat[iy][ix] = 1
+print(mat)
 cnt = 0
 for item in mat:
     for i in range(len(mat)):

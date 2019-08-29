@@ -19,7 +19,7 @@ def change(x, y):
         for i in range(4):
             xi = x + dx[i]
             yi = y + dy[i]
-            if 0 <= xi < M and 0 <= yi < N and not vis[yi][xi]:
+            if 0 <= xi < M and 0 <= yi < N and not vis[yi][xi]: # 범위지정과 비지트
                 if board[yi][xi] == 0 and board[y][x] > 0:
                     board[y][x] -= 1
                 elif board[yi][xi] >= 1:
