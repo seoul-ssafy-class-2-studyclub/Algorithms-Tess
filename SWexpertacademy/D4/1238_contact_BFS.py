@@ -30,11 +30,11 @@ def Search(s):
         temp = []
         for q in range(len(queue)):
             node = queue.pop(0)
-            if visited[node] == 0:
+            if visited[node] == 0: # 방문하지 않은 노드만 가기위해서
                 visited[node] = 1
-                queue.extend(adj_list[node])
-                temp.append(node)
-        visit_order.append(temp)
+                queue.extend(adj_list[node]) # 자손을 추가
+                temp.append(node) # 추가한 다른 부모의 같은계층에 속한 모든 자손을 트랙킹하기 위해서
+        visit_order.append(temp) # 계층별 추가
     return visit_order
 
 for tc in range(1, 11):
