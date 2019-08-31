@@ -32,6 +32,10 @@ Directory:
     
 - Lecture
     - 수업
+
+- Pre_Exam
+    - Samsung 
+      문제등급_제목_알고리즘  
     
 - Note
     - 기타
