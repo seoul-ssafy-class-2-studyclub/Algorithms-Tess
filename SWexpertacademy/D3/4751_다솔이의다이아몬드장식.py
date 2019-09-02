@@ -47,8 +47,7 @@ for tc in range(1, T+1):
                     #print('홀수야', i+1)
     pprint(board)
 
-
-
+    
 
 
 
