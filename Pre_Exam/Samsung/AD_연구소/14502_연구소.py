@@ -2,7 +2,7 @@ import sys
 sys.stdin = open('14502.txt', 'r')
 
 from itertools import combinations
-import copy
+# import copy
 
 
 def building_wall(candids, arr):
@@ -68,11 +68,12 @@ for y in range(N):
 
 # 중복없는 카운트 만드는 코드
 candidates = list(combinations(myyx, 3))
-
+print(len(candidates))
 max_candidate = []
 
 for candidate in candidates:
-    new_board = copy.deepcopy(board)
+    new_board = [i[:] for i in board] # deepcopy 보다 훨씬 빠르다.
+    # new_board = copy.deepcopy(board)
     # 5. 스택에 해당 조합을 넣고,
     # 6. 벽을 세운다음에
     new_board = building_wall(candidate, new_board)

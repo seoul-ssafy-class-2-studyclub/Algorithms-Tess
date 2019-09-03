@@ -1,5 +1,4 @@
 from itertools import combinations
-import copy
 
 def building_wall(candids, arr):
     for candid in candids:
@@ -47,7 +46,7 @@ for y in range(N):
 candidates = list(combinations(myyx, 3))
 max_candidate = []
 for candidate in candidates:
-    new_board = copy.deepcopy(board)
+    new_board = [i[:] for i in board]
     new_board = building_wall(candidate, new_board)
     new_board2 = start_virus(new_board)
     mymax = counting_zero(new_board2)
