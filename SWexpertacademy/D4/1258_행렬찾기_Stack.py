@@ -28,8 +28,8 @@ def colouring(starty, startx):
     while stack:
         y, x = stack.pop()
         board[y][x] = 0
-        iy = y + dy[0]
-        ix = x + dx[0]
+        iy = y
+        ix = x + 1
 
         if 0 <= iy < n and 0 <= ix < n:
             if board[iy][ix] > 0: # 다음줄이 0이 아니라면,
@@ -49,9 +49,6 @@ def colouring(starty, startx):
             xcnt = 1
             stack.append((iy, ix))
     return (ycnt, xcnt)
-
-dy = [0]
-dx = [1]
 
 T = int(input())
 
