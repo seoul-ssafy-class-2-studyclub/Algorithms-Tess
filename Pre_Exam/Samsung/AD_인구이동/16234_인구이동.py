@@ -29,7 +29,7 @@ def search_companions(y, x):
     my_temp_sum = 0
     ML = len(my_friends)
     if ML > 1:
-        fin += 1
+        fin += 1 # 있을때만 카운트
         for y, x in my_friends:
             my_temp_sum += earth[y][x]
         my_temp_res = my_temp_sum // ML
@@ -54,7 +54,7 @@ while 1:
                 # 6. 또 인구이동이 이뤄지는 곳을 확인한다.
                 # 7. 이번에는 visited가 다시 새롭게 만들어져야 한다.
                 # 8. 조건에 만족하는 국가들이 없으면 좌표가 없는 리스트를 반환할 것이므로 이를 breakpoint로 쓴다.
-    if fin == 0:
+    if fin == 0: # 전체를 다 돌아도 있는 경우가 없으면 breakpoint 성립
         break
 print(res)
 
