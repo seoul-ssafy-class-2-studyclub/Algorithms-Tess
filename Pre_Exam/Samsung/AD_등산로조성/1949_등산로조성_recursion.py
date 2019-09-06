@@ -15,8 +15,9 @@ def dfs(y, x, cnt, k, n):
                     dfs(iy, ix, cnt+1, k, n)
                 elif arr[iy][ix] - k < arr[y][x]: # 현재 위치의 숫자보다 계산된 숫자가 작아질 수 있으면,
                     pre = arr[iy][ix] # 값 저장
-                    arr[iy][ix] = arr[y][x] - 1 # 바뀐 값을 저장해준다.
+                    arr[iy][ix] = arr[y][x] - 1 # 바뀐 값을 저장해준다. # 어차피 가장 높은 값일테니까.
                     dfs(iy, ix, cnt+1, 0, n) # k는 사용되었으므로 0으로 없애준다.
+                    # 아래부분의 정보가 없는 상태로 재귀는 호출된다.
                     # 해당 부분을 넘긴 상태가 지난 후에 재귀가 나올때 복귀될 부분
                     arr[iy][ix] = pre
     visited[y][x] = False
