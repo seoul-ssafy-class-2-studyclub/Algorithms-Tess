@@ -19,9 +19,9 @@ def start_virus(arr):
     for y in range(N):
         for x in range(M):
             if arr[y][x] == 2:
-                stack.append((y, x))
+                stack.append((y, x)) # 2에 해당하는 좌표를 모두 추가하고,
 
-    while stack:
+    while stack: # 스택이 빌때까지
         iy, ix = stack.pop()
         if arr[iy][ix] == 0:
             arr[iy][ix] = 2
@@ -31,7 +31,7 @@ def start_virus(arr):
             iix = ix + dx
 
             if 0 <= iiy < N and 0 <= iix < M:
-                if arr[iiy][iix] == 0:
+                if arr[iiy][iix] == 0: # 0 이라면,
                     stack.append((iiy, iix))
     return arr
 
@@ -62,7 +62,7 @@ myyx = []
 
 for y in range(N):
     for x in range(M):
-        if board[y][x] == 0:
+        if board[y][x] == 0: # 0이 있는 좌표를 모두 구한다.
             myyx.append((y, x))
 
 
@@ -71,7 +71,7 @@ candidates = list(combinations(myyx, 3))
 print(len(candidates))
 max_candidate = []
 
-for candidate in candidates:
+for candidate in candidates: # 구한 조합을 하나씩 넣어본다.
     new_board = [i[:] for i in board] # deepcopy 보다 훨씬 빠르다.
     # new_board = copy.deepcopy(board)
     # 5. 스택에 해당 조합을 넣고,

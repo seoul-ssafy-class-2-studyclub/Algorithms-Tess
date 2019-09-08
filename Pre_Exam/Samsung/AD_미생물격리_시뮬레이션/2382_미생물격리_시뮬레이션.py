@@ -159,39 +159,41 @@ for tc in range(1, T+1):
                         elif dict_table[k]['D_status'] == 4:
                             dict_table[k]['D_status'] = 3
 
-                elif originalmap[dict_table[k]['Y']][dict_table[k]['X']] == k and comparemap[tempy][tempx] > 0:
-                    # 미생물수 비교
-                    # 만약 갈 위치에있는 군집이 더 많은 미생물을 갖고있다면,
-                    new = originalmap[tempy][tempx]
-                    print(originalmap[dict_table[k]['Y']][dict_table[k]['X']], comparemap[tempy][tempx])
-                    if comparemap[tempy][tempx] > dict_table[k]['numofCell']:
-                        # 나는 죽고,
-                        dict_table[k]['alive'] = False
-                        # 내가 가진 미생물을 갈위치에있는 군집에게 준다.
-                        dict_table[originalmap[tempy][tempx]]['changed'] += dict_table[k]['numofCell']
+            if originalmap[dict_table[k]['Y']][dict_table[k]['X']] == k and comparemap[tempy][tempx] > 0:
+                # 미생물수 비교
+                # 만약 갈 위치에있는 군집이 더 많은 미생물을 갖고있다면,
+                new = originalmap[tempy][tempx]
+                flag = 0
+                print(originalmap[dict_table[k]['Y']][dict_table[k]['X']], comparemap[tempy][tempx])
+                if comparemap[tempy][tempx] > dict_table[k]['numofCell']:
+                    # 나는 죽고,
+                    dict_table[k]['alive'] = False
+                    # 내가 가진 미생물을 갈위치에있는 군집에게 준다.
+                    dict_table[originalmap[tempy][tempx]]['changed'] += dict_table[k]['numofCell']
 
-                        originalmap[tempy][tempx] = new
-                        comparemap[tempy][tempx] = dict_table[new]['numofCell'] ##
-                        dict_table[new]['Y'] = tempy
-                        dict_table[new]['X'] = tempx
+                    originalmap[tempy][tempx] = new
+                    comparemap[tempy][tempx] = dict_table[new]['numofCell'] ##
+                    dict_table[new]['Y'] = tempy
+                    dict_table[new]['X'] = tempx
 
-                        originalmap[y][x] = 0
-                        comparemap[y][x] = 0
+                    originalmap[y][x] = 0
+                    comparemap[y][x] = 0
 
-                    # 만약 갈 위치에 군집이 더 적은 미생물을 갖고있다면,
-                    elif comparemap[tempy][tempx] < dict_table[k]['numofCell']:
-                        # 나는 살지만 그 적은 미생물을 가진 군집이 죽고,
-                        dict_table[new]['alive'] = False
-                        # 그 적은 미생물을 가진 군집의 미생물을 내가 갖는다.
-                        dict_table[k]['changed'] += dict_table[new]['numofCell']
+                # 만약 갈 위치에 군집이 더 적은 미생물을 갖고있다면,
+                elif comparemap[tempy][tempx] < dict_table[k]['numofCell']:
+                    # 나는 살지만 그 적은 미생물을 가진 군집이 죽고,
+                    dict_table[new]['alive'] = False
+                    # 그 적은 미생물을 가진 군집의 미생물을 내가 갖는다.
+                    dict_table[k]['changed'] += dict_table[new]['numofCell']
 
-                        originalmap[tempy][tempx] = k
-                        comparemap[tempy][tempx] = dict_table[originalmap[tempy][tempx]]['numofCell'] ##
-                        dict_table[k]['Y'] = tempy
-                        dict_table[k]['X'] = tempx
+                    originalmap[tempy][tempx] = k
+                    comparemap[tempy][tempx] = dict_table[originalmap[tempy][tempx]]['numofCell'] ##
+                    dict_table[k]['Y'] = tempy
+                    dict_table[k]['X'] = tempx
 
-                        originalmap[y][x] = 0
-                        comparemap[y][x] = 0
+                    originalmap[y][x] = 0
+                    comparemap[y][x] = 0
+
 
 
     total1 = 0

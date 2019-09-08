@@ -20,7 +20,7 @@ def spread_virus(arr, temp_combinations):
 
 
     while queue:
-        def_time_cnt += 1 # 한번들은 queue를 시작할때 += 1을 한다.
+        def_time_cnt += 1 # 한번들은 queue를 시작할때 += 1을 한다. # 한 부모노드에서 마지막 자손까지의 계층을 구하는 방법
         for _ in range(len(queue)): # 들은 queue들의 원소가 다 소진될때까지 pop을 한다.
             xy = queue.pop(0)
             for dy, dx in d:
