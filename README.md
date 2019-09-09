@@ -62,7 +62,7 @@ https://docs.google.com/spreadsheets/d/1NyRZ04q9c5ARa5Qfyf7C0l_EuzT47-w4-envIep8
 - 카카오 기출
 
 
-![algorithms](./image/181114-04.png)
+![algorithms](/Users/tess/Desktop/tesschung.github/Study/image/181114-04.png)
 
 [초보몽키](https://wayhome25.github.io/cs/2017/04/17/cs-18/)
 
