@@ -12,7 +12,7 @@ N
 
 '''
 
-1. for문과 set, list 활용하여 문제풀
+1. for문과 set, list 활용하여 문제품
 
 '''
 
