@@ -11,8 +11,8 @@ git commit -m:
 문제번호_알고리즘
 
 Directory:
-- SWexpertacademy
-    - temp : 정리필
+- SWexpertacademy :mortar_board:
+    - temp
     - D2
     - D3
     - D4
