@@ -1,4 +1,4 @@
-**STUDY ALGORITHMS**
+:sparkles:**STUDY ALGORITHMS**:sparkles:
 
 GOAL! 
 PRO
@@ -11,7 +11,7 @@ git commit -m:
 문제번호_알고리즘
 
 Directory:
-- SWexpertacademy :mortar_board:
+- :mortar_board: SWexpertacademy 
     - temp
     - D2
     - D3
