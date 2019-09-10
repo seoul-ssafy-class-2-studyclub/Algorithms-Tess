@@ -2,53 +2,53 @@
 
 import sys
 sys.stdin = open('1242.txt', 'r')
-
-P = {(3, 2, 1, 1): 0, (2, 2, 2, 1): 1, (2, 1, 2, 2): 2, (1, 4, 1, 1): 3, (1, 1, 3, 2): 4,(1, 2, 3, 1): 5, (1, 1, 1, 4): 6, (1, 3, 1, 2): 7,(1, 2, 1, 3): 8,(3, 1, 1, 2): 9}
-
-
-
-T = int(input())
-
-for tc in range(1, T+1):
-
-    N, M = map(int, input().split())
-    # 8개 숫자
-    # (홀수 자리의 합 x 3) + 짝수 자리의 합 + 검증 코드 10의 배수
-    # 배열은 16진수로 이루어져있고, 2진수로 변환한 후 암호코드 정보 확인
-    # 정상적인 코드인지 확인
-    # 정상적이면 계산 아니면 0출력
-
-    codes = [list(map(str, input())) for _ in range(N)]
-    #print(codes)
-    lasty = 0
-    lastx = 0
-    for y in range(N):
-        for x in range(M-1, -1, -1):
-            if codes[y][x] != '0': # 0뒤에서 부터 0이 아닌곳이 시작
-                lasty = y
-                lastx = x
-                break
-    print(lasty)
-    print(lastx)
-
-    print(codes[lasty])
-
-    print(int('B', 2))
-
-    my_binary = []
-    for code in codes[lasty]:
-        if code.isdigit():
-            a = list(bin(int(code)))
-            a.pop(1)
-            my_binary.append(a)
-        else:
-            print(code)
-            a = list(bin(code))
-            a.pop(1)
-            my_binary.append(a)
-    print(my_binary)
-
-    # 전부 2진수로 변환 후 확인
+#
+# P = {(3, 2, 1, 1): 0, (2, 2, 2, 1): 1, (2, 1, 2, 2): 2, (1, 4, 1, 1): 3, (1, 1, 3, 2): 4,(1, 2, 3, 1): 5, (1, 1, 1, 4): 6, (1, 3, 1, 2): 7,(1, 2, 1, 3): 8,(3, 1, 1, 2): 9}
+#
+#
+#
+# T = int(input())
+#
+# for tc in range(1, T+1):
+#
+#     N, M = map(int, input().split())
+#     # 8개 숫자
+#     # (홀수 자리의 합 x 3) + 짝수 자리의 합 + 검증 코드 10의 배수
+#     # 배열은 16진수로 이루어져있고, 2진수로 변환한 후 암호코드 정보 확인
+#     # 정상적인 코드인지 확인
+#     # 정상적이면 계산 아니면 0출력
+#
+#     codes = [list(map(str, input())) for _ in range(N)]
+#     #print(codes)
+#     lasty = 0
+#     lastx = 0
+#     for y in range(N):
+#         for x in range(M-1, -1, -1):
+#             if codes[y][x] != '0': # 0뒤에서 부터 0이 아닌곳이 시작
+#                 lasty = y
+#                 lastx = x
+#                 break
+#     print(lasty)
+#     print(lastx)
+#
+#     print(codes[lasty])
+#
+#     print(int('B', 2))
+#
+#     my_binary = []
+#     for code in codes[lasty]:
+#         if code.isdigit():
+#             a = list(bin(int(code)))
+#             a.pop(1)
+#             my_binary.append(a)
+#         else:
+#             print(code)
+#             a = list(bin(code))
+#             a.pop(1)
+#             my_binary.append(a)
+#     print(my_binary)
+#
+#     # 전부 2진수로 변환 후 확인
 
 P = {(2, 1, 1): 0,
      (2, 2, 1): 1,
@@ -88,6 +88,8 @@ for tc in range(1, T + 1):
                     for k in range(8):
                         c2 = c3 = c4 = 0
                         while (val & 1) == 0:
+                            print('--', val >> 1)
+                            print('-->', val & 1)
                             val, c = val >> 1, c + 1
                             if c == 4:
                                 j, c = j - 1, 0
@@ -207,5 +209,99 @@ for tc in range(1, T+1):
  
     print("#{} {}".format(tc, sum))
 
+
+'''
+
+'''
+def htod(h):
+    asc = ord(h)
+    if asc >= A:
+        asc = asc - A + 10
+    else:
+        asc = asc - zero
+    return asc
+ 
+ 
+def chk_code():
+    global c
+    password = []
+    mag = 0
+    bi_num = htod(arr[r][c])
+    chk = 0
+    for i in range(8):
+        ratio = [0, 0, 0]
+        while not(bi_num & 1):
+            chk += 1
+            bi_num >>= 1
+            if chk == 4:
+                chk = 0
+                c -= 1
+                bi_num = htod(arr[r][c])
+        while bi_num & 1:
+            ratio[2] += 1
+            chk += 1
+            bi_num >>= 1
+            if chk == 4:
+                chk = 0
+                c -= 1
+                bi_num = htod(arr[r][c])
+        while not (bi_num & 1):
+            ratio[1] += 1
+            chk += 1
+            bi_num >>= 1
+            if chk == 4:
+                chk = 0
+                c -= 1
+                bi_num = htod(arr[r][c])
+        while bi_num & 1:
+            ratio[0] += 1
+            chk += 1
+            bi_num >>= 1
+            if chk == 4:
+                chk = 0
+                c -= 1
+                bi_num = htod(arr[r][c])
+        if not mag:
+            mag = min(ratio[0], ratio[1], ratio[2])
+        if mag > 1:
+            ratio = map(lambda x: x // mag, ratio)
+        password.insert(0, decode[tuple(ratio)])
+    if chk:
+        c -= 1
+ 
+    code = 0
+    for i in range(8):
+        if not i % 2:
+            code += password[i] * 3
+        else:
+            code += password[i]
+    if not code % 10:
+        return sum(password)
+    else:
+        return 0
+ 
+decode = {(2, 1, 1): 0, (2, 2, 1): 1, (1, 2, 2): 2, (4, 1, 1): 3, (1, 3, 2): 4,
+(2, 3, 1): 5, (1, 1, 4): 6, (3, 1, 2): 7, (2, 1, 3): 8, (1, 1, 2): 9}
+ 
+zero = ord('0')  # 48
+A = ord('A')  # 65
+result_list = []
+for case in range(int(input())):
+    N, M = map(int, input().split())
+    arr = [input() for _ in range(N)]
+    visited = []
+    result = 0
+    for r in range(N):
+        c = M - 1
+        while c >= 0:
+            if arr[r][c] != '0' and (arr[r-1][c] == '0' or r == 0):
+                result += chk_code()
+            else:
+                c -= 1       
+ 
+    result_list.append(result)
+ 
+for i in range(len(result_list)):
+    print(f'#{i+1} {result_list[i]}')
 
 '''
