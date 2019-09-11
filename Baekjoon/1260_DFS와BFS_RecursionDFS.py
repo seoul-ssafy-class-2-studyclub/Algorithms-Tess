@@ -1,21 +1,6 @@
 import sys
 sys.stdin = open('1260.txt', 'r')
 
-'''
-4 5 1
-1 2
-1 3
-1 4
-2 4
-3 4
-
-처음줄에는 DFS
-1 2 4 3
-
-두번째줄에는 BFS
-1 2 3 4
-'''
-
 # parents 가 되는 부분을 출력해야하는데..
 import collections
 
