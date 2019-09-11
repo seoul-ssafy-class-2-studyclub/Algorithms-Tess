@@ -50,18 +50,23 @@ https://docs.google.com/spreadsheets/d/1NyRZ04q9c5ARa5Qfyf7C0l_EuzT47-w4-envIep8
 3. 스스로 재코딩
 4. 풀었던 문제 다시 풀기
 
+
 <a style="color: black" href="https://programmers.co.kr/learn/challenges">[프로그래머스]</a>
+
 - 코딩테스트연습
 
 <a style="color: black" href="https://swexpertacademy.com/main/main.do">
 [삼성소프트웨어아카데미]</a>
+
 - 삼성 기출
 - Difficulty 1-Attack
 - Lectures
 
+
 <a style="color: black" href="https://www.acmicpc.net/">[백준]</a>
 - 삼성 기출
 - 카카오 기출
+
 
 ![algorithms](images/181114-04.png)
 
