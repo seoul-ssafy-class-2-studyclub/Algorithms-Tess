@@ -8,7 +8,7 @@ def dfs(v):
     visited[v] = True
 
     for u in adj_list[v]:
-        if visited[u] == False:
+        if visited[u] == False: # v에서 u를 확인할때, 방문하지 않았다면 dfs를 태운다.
             dfs(u)
 
 for tc in range(int(input())):
