@@ -17,7 +17,6 @@ def DFS(s, path):
     for i in adj_list[s]:
         if visited2[i] == False:
             flag = False
-            # stack.append(i)
             visited2[i] = True
             return DFS(i, path + [i])
             visited2[i] = False
