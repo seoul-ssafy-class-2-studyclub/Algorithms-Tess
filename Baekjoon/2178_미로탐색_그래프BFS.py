@@ -2,6 +2,7 @@ import sys
 sys.stdin = open('2178.txt', 'r')
 import collections
 
+# 최단거리를 구하는 문제
 # (0,0)에서 출발해서
 # (N-1, M-1)에 도착
 N, M = map(int, input().split())
