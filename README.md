@@ -11,8 +11,11 @@ git commit -m:
 문제번호_알고리즘
 
 Directory:
+
+- Algorithms (알고리즘별 기본 코드)
+
 - :mortar_board: 
-<a style="color:black" href="https://swexpertacademy.com/main/main.do">[SWexpertacademy]</a>
+<a style="color:black" href="https://swexpertacademy.com/main/main.do">[SWexpertacademy]</a> (삼성소프트웨어아카데미 문제)
     - temp
     - D2
     - D3
@@ -22,24 +25,21 @@ Directory:
     - Courses(related to the learning categories)
     - 제출
   
-- <a style="color:black" href="https://www.acmicpc.net/">[Baekjoon]</a>
+- <a style="color:black" href="https://www.acmicpc.net/">[Baekjoon]</a> (백준 문제)
     - 백준
     
-- <a style="color:black" href="http://jungol.co.kr/">[Jungol]</a>
+- <a style="color:black" href="http://jungol.co.kr/">[Jungol]</a> (정올 문제)
     - 정올
 
-- CodeReview
-    - 스터디 코드리뷰
+- CodeReview (스터디 코드리뷰)
     
-- Lecture
-    - 수업
-
-- Pre_Exam
+- Lecture (수업)
+    
+- Pre_Exam (기업별 기출 문제)
     - Samsung 
       문제등급_제목_알고리즘  
     
-- Note
-    - 기타
+- Note (기타)
 
 즐거운 알고리즘 스터디
 https://docs.google.com/spreadsheets/d/1NyRZ04q9c5ARa5Qfyf7C0l_EuzT47-w4-envIep8hDo/edit#gid=0
@@ -86,7 +86,7 @@ https://docs.google.com/spreadsheets/d/1NyRZ04q9c5ARa5Qfyf7C0l_EuzT47-w4-envIep8
 
 DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 11722, 11054, 1912, 2579, 1699, 2133, 9461, 2225, 2011, 11052, 2751, 11650, 11651, 10814, 10825, 10989, 11652, 11004, 10828, 9012, 10799, 10845, 10866, 10808, 10809, 10820, 2743, 11655, 10824, 11656, 1406, 1158, 1168, 10430, 2609, 1934, 1850, 9613, 11005, 2745, 1373, 1212, 2089, 11576, 1978, 1929, 6588, 11653, 10872, 1676, 2004
 
-그래프 - ~~1260~~, ~~11724~~, 1707, 10451, 2331, 9466, 2667, 4963, 7576, 2178, 2146, 1991, 11725, 1167, 1967
+그래프 - ~~1260~~, ~~11724~~, ~~1707~~, ~~10451~~, 2331, 9466, 2667, ~~4963~~, ~~7576~~, ~~2178~~, ~~2146~~, 1991, 11725, 1167, 1967
 
 분할정복 - 11728, 1780, 11729, 1992, 2447, 2448, 1517, 2261
 
