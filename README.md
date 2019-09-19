@@ -32,17 +32,14 @@ Directory:
     - 정올
 
 - CodeReview (스터디 코드리뷰)
-    
+  
 - Lecture (수업)
-    
+  
 - Pre_Exam (기업별 기출 문제)
     - Samsung 
       문제등급_제목_알고리즘  
     
 - Note (기타)
-
-즐거운 알고리즘 스터디
-https://docs.google.com/spreadsheets/d/1NyRZ04q9c5ARa5Qfyf7C0l_EuzT47-w4-envIep8hDo/edit#gid=0
 
 공부순서
 1. 2-30분 문제 분석
@@ -88,6 +85,10 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
 
 그래프 - ~~1260~~, ~~11724~~, ~~1707~~, ~~10451~~, 2331, 9466, 2667, ~~4963~~, ~~7576~~, ~~2178~~, ~~2146~~, 1991, 11725, 1167, 1967
 
+다익스트라 - ~~1753~~, ~~1916~~
+
+플로이드워셜 - ~~1238~~
+
 분할정복 - 11728, 1780, 11729, 1992, 2447, 2448, 1517, 2261
 
 그리디 - 11047, 2875, 10610, 1783, 1931, 11399, 2873, 1744
@@ -101,10 +102,20 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
 - [2×2×2 큐브](https://www.acmicpc.net/problem/16939)
 - [큐빙](https://www.acmicpc.net/problem/5373)
 - [봄버맨](https://www.acmicpc.net/problem/16918)
+- 주사위 굴리기
+  톱니바퀴
+  톱니바퀴 (2)
+  로봇 청소기
+  경사로
+  뱀
+  드래곤 커브
+  미네랄
+  iSharp
+  LCD Test
 
 ### 브루트 포스
 
-- [파이프 옮기기 1](https://www.acmicpc.net/problem/17070)
+- :heavy_check_mark: [파이프 옮기기 1](https://www.acmicpc.net/problem/17070)
 - [Maaaaaaaaaze](https://www.acmicpc.net/problem/16985)
 - [인싸들의 가위바위보](https://www.acmicpc.net/problem/16986)
 - [계란으로 계란치기](https://www.acmicpc.net/problem/16987)
@@ -125,12 +136,26 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
 - [등차수열 변환](https://www.acmicpc.net/problem/17088)
 - [캐슬 디펜스](https://www.acmicpc.net/problem/17135)
 - [색종이 붙이기](https://www.acmicpc.net/problem/17136)
+- 테트로미노
+  링크와 스타트
+  :heavy_check_mark: 연구소
+  감시
+  사다리 조작
+  치킨 배달
+  숫자판 점프
+  테트리스
+  삼각형의 값
+  자와 각도기
+  한윤정이 이탈리아에 가서 아이스크림을 사먹는데
+  부분수열의 합
+  두 동전
+  에너지 모으기
 
 ### BFS
 
 - [뱀과 사다리 게임](https://www.acmicpc.net/problem/16928)
 - [데스 나이트](https://www.acmicpc.net/problem/16948)
-- [인구 이동](https://www.acmicpc.net/problem/16234)
+- :heavy_check_mark:[인구 이동](https://www.acmicpc.net/problem/16234)
 - [아기 상어](https://www.acmicpc.net/problem/16236)
 - [숨바꼭질 5](https://www.acmicpc.net/problem/17071)
 - [확장 게임](https://www.acmicpc.net/problem/16920)
@@ -139,7 +164,33 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
 - [서울 지하철 2호선](https://www.acmicpc.net/problem/16947)
 - [체스판 여행 1](https://www.acmicpc.net/problem/16959)
 - [움직이는 미로 탈출](https://www.acmicpc.net/problem/16954)
-- [직사각형 탈출](https://www.acmicpc.net/problem/16973)
+- :heavy_check_mark:[직사각형 탈출](https://www.acmicpc.net/problem/16973)
+- 구슬 탈출 4
+  과외맨
+  양
+  스타트링크
+  돌 그룹
+  벽 부수고 이동하기 2
+  말이 되고픈 원숭이
+  적록색약
+  성곽
+  백조의 호수
+  새로운 하노이 탑
+  4 연산
+  거울 설치
+  견우와 직녀
+
+### 다이나믹 프로그래밍
+
+- 퇴사 2
+  알약
+  ABC
+  출근 기록
+  뮤탈리스크
+  Acka
+  플레이리스트
+  N-Rook II
+  사다리 게임
 
 ### 기타
 
@@ -159,3 +210,19 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
 - [배열 B의 값](https://www.acmicpc.net/problem/16971)
 - [레벨 햄버거](https://www.acmicpc.net/problem/16974)
 - [파이프 옮기기 2](https://www.acmicpc.net/problem/17069)
+- NxM 보드 완주하기
+  수족관 1
+  스도미노쿠
+  욕심쟁이 판다
+  사탕 게임
+  로봇 조종하기
+  가장 큰 정사각형
+- 시험 감독
+  AB
+  곱셈
+  이항 계수 2
+  구간 합 구하기 4
+  나머지 합
+  책 페이지
+  무한 문자열
+  A와 B
