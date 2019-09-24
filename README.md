@@ -38,6 +38,7 @@ Directory:
 - Pre_Exam (기업별 기출 문제)
     - Samsung 
       문제등급_제목_알고리즘  
+    - 카카오
     
 - Note (기타)
 
@@ -110,7 +111,7 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
 - 톱니바퀴
 - 톱니바퀴 (2)
 - 로봇 청소기
-- 경사로
+- :heavy_check_mark: 경사로
 - 뱀
 - 드래곤 커브
 - 미네랄
@@ -139,13 +140,15 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
 - [십자가 2개 놓기](https://www.acmicpc.net/problem/17085)
 - [등차수열 변환](https://www.acmicpc.net/problem/17088)
 - [캐슬 디펜스](https://www.acmicpc.net/problem/17135)
-- [색종이 붙이기](https://www.acmicpc.net/problem/17136)
-- 테트로미노
+- :heavy_check_mark: [색종이 붙이기](https://www.acmicpc.net/problem/17136)
+- :heavy_check_mark: 테트로미노
 - 링크와 스타트
-- :heavy_check_mark: 연구소
-- 감시
-  사다리 조작
-- 치킨 배달
+- :heavy_check_mark: 연구소1
+- :heavy_check_mark: 연구소2
+- :heavy_check_mark: 연구소3
+- :heavy_check_mark: 감시
+- 사다리 조작
+- :heavy_check_mark: 치킨 배달
 - 숫자판 점프
 - 테트리스
 - 삼각형의 값
@@ -186,7 +189,8 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
 
 ### 다이나믹 프로그래밍
 
-- 퇴사 2
+- :heavy_check_mark: 퇴사 
+- :heavy_check_mark: 퇴사 2
 - 알약
 - ABC
 - 출근 기록
