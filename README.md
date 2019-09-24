@@ -31,16 +31,13 @@ Directory:
 - <a style="color:black" href="http://jungol.co.kr/">[Jungol]</a> (정올 문제)
     - 정올
 
-- CodeReview (스터디 코드리뷰)
-  
-- Lecture (수업)
-  
 - Pre_Exam (기업별 기출 문제)
     - Samsung 
       문제등급_제목_알고리즘  
     - 카카오
     
 - Note (기타)
+    - CodeReview (스터디 코드리뷰)
 
 공부순서
 1. 2-30분 문제 분석
