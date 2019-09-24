@@ -1,7 +1,6 @@
 import sys
 sys.stdin = open('5208.txt', 'r')
 
-
 '''
 유망하지 않으면 그 부모노드로 돌아가서 유망한 다른 노드를 시도한다.
 그러므로 백트래킹은 DFS를 사용해서 푼다.
@@ -29,49 +28,44 @@ sys.stdin = open('5208.txt', 'r')
 5 2 3 1 1
 '''
 
-# 백트래킹
+# 백트래
 
-# def backtracking(now, mybattery, charge=0):
-#     global minchargenum
-#
-#     if minchargenum < charge:
-#         return
-#
-#     # 자신의 자식노드의 유망성을 점검한다.
-#     starts = [i for i in range(now + 1, now+1+stations[now])]
-#     # print(starts)
-#     if N-1 in starts:
-#         if minchargenum > charge:
-#             minchargenum = charge
-#             return
-#
-#     else:
-#         for i in starts:
-#             new_now = i
-#             backtracking(new_now, stations[new_now], charge+1)
-#
-#
-#
-# for tc in range(int(input())):
-#     stations = list(map(int, input().split())) + ['G']
-#
-#     N = stations.pop(0)
-#     # print(stations)
-#     #
-#     # print(N)
-#     # battery[0] # 첫 시작점이 될 수 있는 노드 인덱스들까지라고 했지만,
-#     # 사실
-#     # 나의 현재위치에서 유망한 다음 인덱스들을 모두 거쳐가면서(stack에 넣고) minchargenum을 갱신한다.
-#     # - 버리는 경우
-#     # minchargenum보다 클때 가지치기하기
-#     # 하나씩 움직일때마다 -1할 필요없고, 내 자식에 바로 갔을때 충전하고 그 자식의 자식에서 충전하는 식으로 최적해를 찾아나간다.
-#     pos = 0
-#     battery = stations[0]
-#     minchargenum = 99999
-#     backtracking(pos, battery)
-#     print(f'#{tc+1}', minchargenum)
+def backtracking(now, charge=0):
+    global minchargenum
+
+    if minchargenum < charge:
+        return
+
+    # 자신의 자식노드의 유망성을 점검한다.
+    # 때문에 자신의 모든 자식에 대한 정보를 계속 갱신한다.
+    # 배터리정보는 현재 위치에서 어디까지가 내가 갈 수있는곳, 즉 유망한 위치들인지를 알기 위한 정보이다.
+    starts = [i for i in range(now + 1, now+1+stations[now])]
+    if N-1 in starts: # 만약 도착지가 자식에 있고,
+        if minchargenum > charge: # charge한 수가 저장된 값보다 작은 경우
+            minchargenum = charge # 갱신한다.
+            return
+
+    else: # 자식들 중에 도착지가 없으면, 모든 자식들을 돌면서 자식의 자식들을 본다.
+        for i in starts:
+            new_now = i # 자식하나는 또 다른 자식들의 부모로서 들어간다.
+            backtracking(new_now, charge+1)
 
 
+
+for tc in range(int(input())):
+    stations = list(map(int, input().split())) + ['G']
+    N = stations.pop(0)
+    # battery[0] # 첫 시작점이 될 수 있는 노드 인덱스들까지라고 했지만,
+    # 사실
+    # 나의 현재위치에서 유망한 다음 인덱스들을 모두 거쳐가면서(stack에 넣고) minchargenum을 갱신한다.
+    # - 버리는 경우
+    # minchargenum보다 클때 가지치기를 한다.
+    # 하나씩 움직일때마다 -1할 필요없고, 내 자식에 바로 갔을때 충전하고 그 자식의 자식에서 충전하는 식으로 최적해를 찾아나간다.
+    pos = 0
+    battery = stations[0]
+    minchargenum = 99999
+    backtracking(pos)
+    print(f'#{tc+1}', minchargenum)
 
 ## DP
 
@@ -98,44 +92,3 @@ for tc in range(int(input())):
     dp = [0]*N
     DP()
     print(dp[1]-1)
-
-
-
-
-
-
-
-
-
-#
-# def dfs_recursion(bat, visited, nowbattery, chargeN, pos, path):
-#     global mymin
-#
-#     if 0 <= pos < N:
-#         if bat[pos] == 'G':
-#             if mymin > chargeN:
-#                 mymin = chargeN
-#                 return
-#         if nowbattery > 0 and visited[pos+1] == False:
-#             visited[pos] = True
-#             path.append(pos+1)
-#             dfs_recursion(bat, visited, nowbattery - 1, chargeN, pos + 1, path)
-#
-#         elif nowbattery == 0 and visited[pos] == False and bat[pos]:
-#             visited[pos] = True
-#             dfs_recursion(bat, visited, bat[pos], chargeN + 1, pos, path)
-#
-#     return
-#
-#
-#
-# for tc in range(int(input())):
-#     battery = list(map(int, input().split())) + ['G']
-#     print(battery)
-#     N = len(battery)+1
-#     vis = [False]*N
-#     vis[0] = True
-#     mymin = 999999
-#     current = 1
-#     dfs_recursion(battery, vis, battery[0], 0, current, [])
-#     print(mymin)
