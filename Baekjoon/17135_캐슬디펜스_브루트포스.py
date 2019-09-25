@@ -28,8 +28,7 @@ lands = collections.deque([list(map(int, input().split())) for _ in range(N)])
 
 '''
 죽이는 우선순위
-1. D이하 에서 가장 가깝고,
-2. 왼쪽에 있다.
+1. D이하 에서 가장 가깝고, 2. 왼쪽에 있다.
 
 턴이 하나 지나면, 칸이 점점 밀려나간다.
 뒤 리스트를 pop처리해서 없애고 

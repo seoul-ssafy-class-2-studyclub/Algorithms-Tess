@@ -28,7 +28,7 @@ sys.stdin = open('5208.txt', 'r')
 5 2 3 1 1
 '''
 
-# 백트래
+# 백트래킹 
 
 def backtracking(now, charge=0):
     global minchargenum
