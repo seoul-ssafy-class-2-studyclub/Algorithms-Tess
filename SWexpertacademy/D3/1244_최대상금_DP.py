@@ -1,3 +1,6 @@
+import sys
+sys.stdin = open('1244.txt', 'r')
+
 
 # 최대상금
 # 주어진 숫자(number)을 주어진횟수(depth) 만큼 변경해줬을때 최대값을 구하는 함수.
@@ -5,7 +8,7 @@ def max_prices(depth, number):
     # 만약 주어진 depth가 문제에서 정한 횟수(K)와 같다면 모든 계산이 끝난것이다.
     # 따라서 지금 계산된 값을 반환해준다. 앞으로 이 함수는 무조건 계산이 끝난 후 최대값을 반환해준다 (우리가 찾는 값이 최대값이므로)
     if depth == K:
-        return number
+        return number # 재귀 trigger
 
     # 아래가 DP를 사용한 상황. 만약 지금 현재 횟수에서, 주어진 숫자를 계산했었다면. 해당 값을 꺼내어 가져와서 리턴한다(한번더 할필요가없다.)
     # cache가 2차원 구조인데 depth 는 현재 전환횟수를 인덱스로, number은 현재 숫자를 키값으로 하는 리스트/딕셔너리에넣어서
@@ -34,7 +37,7 @@ def max_prices(depth, number):
     cache[depth][number] = res
     # 계산을 다했다면 현재 깊이와 숫자에 대해서 계산결과값을 저장소에 저장하고
     # 결과를 리턴한다.
-    return res
+    return res # 모든 재귀 호출의 끝
 
 
 '''
@@ -118,3 +121,4 @@ for round in range(int(input())):
              range(K + 1)]  # 이것이 DP를 사용하기위한 저장소. 이 cache리스트에는 필요한 깊이만큼의 {}, 사전이 존재한다. 이 사전내에 필요한 데이터를 저장할예정.
 
     print(f'#{round + 1} {max_prices(0,number)}')
+    # print(cache)

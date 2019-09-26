@@ -1,4 +1,4 @@
-#:sparkles:**STUDY ALGORITHMS**:sparkles:
+# :sparkles:**STUDY ALGORITHMS**:sparkles:
 
 GOAL! 
 PRO
