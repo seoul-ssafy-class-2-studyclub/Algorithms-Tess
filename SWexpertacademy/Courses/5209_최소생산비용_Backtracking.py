@@ -2,7 +2,7 @@ import sys
 sys.stdin = open('5209.txt', 'r')
 
 def dfs_backtracking(nowy, nowx, temp, vis):
-    vis = [:] # 딥카피해서 카피한 자기만의 리스트를 갖고다닐 수 있도록 했다.
+    vis = vis[:] # 딥카피해서 카피한 자기만의 리스트를 갖고다닐 수 있도록 했다.
     global mymin
     temp += board[nowy][nowx]
     # print(vis)

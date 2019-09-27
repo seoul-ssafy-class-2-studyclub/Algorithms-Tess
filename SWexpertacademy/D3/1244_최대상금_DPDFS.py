@@ -44,7 +44,7 @@ for tc in range(int(input())):
 
     # 바꿀 경우의 수가 될 인덱스를 구한다.
     changeindexes = list(itertools.combinations([i for i in range(len(candidate))], 2))
-    print(candidate, changeNum)
+    # print(candidate, changeNum)
     # print(changeindexes)
 
     DP = [{} for _ in range(changeNum+1)]
@@ -54,4 +54,4 @@ for tc in range(int(input())):
     # 최대값을 끌어온다.
     # 같은 depth에서 같은 number인 경우, 가지치기가 가능하다.
     # depth가 changeNum만큼 되면 빠져나온다.
-    print(mymax(candidate, 0))
+    print(f'#{tc+1}', mymax(candidate, 0))
