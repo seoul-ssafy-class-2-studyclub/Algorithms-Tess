@@ -1,6 +1,8 @@
 import sys
 sys.stdin = open('1247.txt', 'r')
 
+
+
 '''
 #1 200
 #2 304
@@ -49,24 +51,78 @@ sys.stdin = open('1247.txt', 'r')
 #     N = int(input())
 #     # 받고 나눠주기
 #     mytemp = list(map(int, input().split()))
-#     companyx, companyy = mytemp[0], mytemp[1]
-#     housex, housey = mytemp[2], mytemp[3]
+#     companyxy = (mytemp[0], mytemp[1])
+#     housexy = (mytemp[2], mytemp[3])
 #     customers = mytemp[4:]
 #
 #     all_customersxy = []
-#     for idx in range(N*2):
-#         if idx%2 == 0:
-#             all_customersxy.append((customers[idx], customers[idx+1]))
-#
-#     candidates = set(itertools.permutations(all_customersxy, N))
+#     for idx in range(0, N*2, 2):
+#         all_customersxy.append((customers[idx], customers[idx+1]))
 #
 #     # 뽑은 모든 경우의 수를 하나씩 for문으로 순회하면서 이동거리가 가장 짧은 경로를 찾는다.
 #     # set에 값을 넣으면서 개수구하기
 #     mymin = 99999
-#     for candidate in candidates:
-#         candidate = list(candidate)
-#         candidate.insert(0, (companyx, companyy))
-#         candidate.append((housex, housey))
+#     for i in itertools.permutations(all_customersxy):
+#         candidate = [companyxy, *list(i), housexy]
 #         solve(candidate)
 #
 #     print(f'#{tc+1}', mymin)
+#
+
+# import itertools
+#
+# def solve(xys):
+#     global mymin
+#     result = 0
+#     for i in range(0, N+2-1):
+#         result += abs(xys[i][0] - xys[i+1][0]) + abs(xys[i][1] - xys[i+1][1])
+#
+#     if result < mymin:
+#         mymin = result
+#     return
+#
+# for tc in range(int(input())):
+#     N = int(input())
+#     mytemp = list(map(int, input().split()))
+#     companyxy = (mytemp[0], mytemp[1])
+#     housexy = (mytemp[2], mytemp[3])
+#     customers = mytemp[4:]
+#
+#     all_customersxy = []
+#     for idx in range(0, N*2, 2):
+#         all_customersxy.append((customers[idx], customers[idx+1]))
+#
+#     mymin = 99999
+#     for i in itertools.permutations(all_customersxy):
+#         candidate = [companyxy, *list(i), housexy]
+#         solve(candidate)
+#     print(f'#{tc+1}', mymin)
+
+
+import itertools
+
+def solve(xys):
+    global mymin
+    result = 0
+    for i in range(0, N+2-1):
+        result += abs(xys[i][0] - xys[i+1][0]) + abs(xys[i][1] - xys[i+1][1])
+
+    mymin = min(mymin, result)
+    return
+
+for tc in range(int(input())):
+    N = int(input())
+    mytemp = list(map(int, input().split()))
+    companyxy = (mytemp[0], mytemp[1])
+    housexy = (mytemp[2], mytemp[3])
+    customers = mytemp[4:]
+
+    all_customersxy = []
+    for idx in range(0, N*2, 2):
+        all_customersxy.append((customers[idx], customers[idx+1]))
+
+    mymin = 99999
+    for i in itertools.permutations(all_customersxy):
+        candidate = [companyxy, *list(i), housexy]
+        solve(candidate)
+    print(f'#{tc+1}', mymin)

@@ -1,5 +1,7 @@
 # :sparkles:**STUDY ALGORITHMS**:sparkles:
 
+#### [Algorithms 표준코드 및 이론정리](https://github.com/tesschung/TIL-garden/tree/master/Algorithms)
+
 GOAL! 
 PRO
 
@@ -13,8 +15,6 @@ git commit -m:
 ---
 
 Directory:
-
-- Algorithms (알고리즘별 기본 코드)
 
 - :mortar_board: 
 <a style="color:black" href="https://swexpertacademy.com/main/main.do">[SWexpertacademy]</a> (삼성소프트웨어아카데미 문제)
@@ -38,8 +38,6 @@ Directory:
       문제등급_제목_알고리즘  
     - 카카오
     
-- Note (기타)
-    - CodeReview (스터디 코드리뷰)
 
 ---
 
@@ -238,3 +236,6 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
 - 책 페이지
 - 무한 문자열
 - A와 B
+
+
+
