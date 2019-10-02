@@ -12,7 +12,7 @@ neighbors = [0] + list(map(int, input().split())) # 인구수
 # 이후 인접한 구역의 번호
 
 adj_list = [[] for _ in range(N+1)] # 인접리스트
-for i in range(1, N+1):
+for i in range(1, N+1): # 1부터 시작해서 N+1까지이다. 인덱스 반드시 확인해주어야한다.
     print(i)
     se = list(map(int, input().split()))
 
@@ -91,7 +91,7 @@ for group in groups:
         if mymin > diff:
             mymin = diff
 
-# 결과출력
+# 결과 출력
 if mymin == 999999999:
     print(-1)
 else:
