@@ -2,31 +2,6 @@ import sys
 sys.stdin = open('1808.txt', 'r')
 
 '''
-여기는 인풋에 주어지는 숫자밖에없어
-예를들어 1 1 0 0 0 0 0 0 0 0 0 ...
-이면
-0과 1 숫자밖에 못누르는거야
-그리고 곱하기 뿐이못눌러
-그래서 주어지는 숫자와 곱하기만을 이용하여 인풋에 넣은 목표 숫자를 만들 수 있는가 없는가
-만들 수 있다면 최소 버튼을 몇번 눌러야 가능한가
-를 구하는문제인데
-주어진 예시에서 1,2,5가 가능하고 60을 만들라면
-1,2 를 눌러서
-12를 만들고
-곱하기
-5
-=
-해서
-12 두번
-곱하기 한번
-5 한번
-= 한번
-해서 총 5번의 계산기 버튼을 눌러야겠지
-2,4 가 가능한 계산기에서 23을 만들라면
-죽었다 깨어나도 안되니까
--1을 출력해야하구
-이해되셨나요?
-
 0 1 1 0 0 1 0 0 0 0
 1,2,5,*,=를 사용해서 60만들기
 
@@ -45,7 +20,6 @@ sys.stdin = open('1808.txt', 'r')
 def isPrime(g):
     a = [False, False] + [True]*(g-1)
     primes = []
-
     for i in range(2, g+1):
         if a[i]: # True라면
             primes.append(i)
@@ -53,18 +27,68 @@ def isPrime(g):
                 a[j] = False
     return a
 
+def search(nums, mults):
+    global mylist
+
+    nums = str(nums)
+    mults = str(mults)
+    cnt = 0
+    for char in nums:
+        if char in mylist:
+            cnt += 1
+    cnt2 = 0
+    for char in mults:
+        if char in mylist:
+            cnt2 += 1
+    if cnt == len(nums) and cnt2 == len(mults):
+        return cnt + cnt2 + 1, nums, mults
+
+    else:
+        return False, nums, mults
+
+
+
+def solve(g):
+    global mymin, myminnums, myprimes
+
+
+    if myprimes[int(g)] == True:
+        return
+
+    # 모든 약수를 구한다.
+    # 약수를 구할때마다 mylist에 있는지, 모든 경우가 확인하고 있으면 1을 한다.
+    # 1을 하고나면 결과를 mymin에 갱신한다.
+    # 소수인 경우인지 항상 확인하는 탈출조건을 만들어준다.
+    # 루트 int(goal ** 0.5 + 1) 구하기
+
+    for i in range(2, int(int(g) ** 0.5 + 1)):
+        # 1~루트 (g+1) 까지 돌면서, 약수를 구한다.
+        if int(g) % i == 0:
+            main = int(g)//i
+            multiple = i
+
+            # 3. 약수를 구해서 자판기에 있는 숫자라면 1을 더하는 함수
+            num, n, m = search(main, multiple)
+            if mymin > num and num != False:
+                mymin = num
+                myminnums.append((n, m))
+
+            elif num == False:
+                solve(main)
+                solve(multiple)
+                # 그 아래에서 쪼갤때의 숫자들이 goal의 숫자를 만들 수 있을까?를 고려해야한다.
+
+
 
 for tc in range(int(input())):
-    temp = list(map(int,input().split()))
-    goal = int(input())
+    temp = list(map(str, input().split()))
+    goal = input()
 
     # 가능한 숫자로 변환한다.
     mylist = []
     for i in range(len(temp)):
-        if temp[i] == 1:
-            mylist.append(i)
-    print(mylist)
-    print(goal)
+        if temp[i] == '1':
+            mylist.append(str(i))
     # 2. goal으로 부터 먼저 에라토스테네스의 체를 이용하여 소수구하는 함수
     '''
     소수: 소수(Prime Number)는 약수로 1과 자기 자만을 가지는 정수
@@ -76,15 +100,23 @@ for tc in range(int(input())):
     4. 지워지지 않은 수 중 제일 작은 5를 소수로 채택하고, 나머지 5의 배수를 모두 지운다. 
     5. (반복)     
     '''
-    myprimes = isPrime(goal) # 남은 True가 소수이다.
-    print(myprimes)
+    myprimes = isPrime(int(goal)) # 남은 True가 소수이다.
 
     # 1. 약수구하는 함수
+    # 약수는 숫자%i == 0 이되는 i와 숫자//i 를 말한다.
+    # 60일때 12 * 5는 '2번' '*' '1번' '=' 총 5번을 누른다.
+    # 자판기에서 선택 가능한 숫자들이 나올텐데, 그게 가능한 모든 경우의 수를 다 검사를 해야만,
+    # 우리가 원하는 최소값을 찾을 수 있다.
+    mymin = 99999
+    myminnums = []
+    solve(goal)
+
+    print(f'#{tc+1}', mymin, myminnums)
 
 
 
 
 
-    # 3. 약수를 구해서 자판기에 있는 숫자라면 1을 리턴하는 함수
+
 
 
