@@ -15,26 +15,24 @@ def find(i):
         onemonthpay = onemonth # 40
         threemonthpay = threemonth
 
-        temp = []
+        tempmin = 9999
         if dp[i-1] >= onedaypay or onedaypay <= onemonthpay:
-            ix = i + 1
             onedaypay = dp[i-1] + onedaypay
-            temp.append((onedaypay, ix))
+            if tempmin > onedaypay:
+                tempmin = onedaypay
 
         if dp[i-1] >= onemonthpay or onedaypay > onemonthpay:
-            ix = i + 1
             onemonthpay = dp[i - 1] + onemonthpay
-            temp.append((onemonthpay, ix))
+            if tempmin > onemonthpay:
+                tempmin = onemonthpay
 
         # 앞이 0, 0, 0 인 경우를 고려해서 if조건 더 필요했음.
         if dp[i-3]+ dp[i-2]+ dp[i-1] >= threemonthpay or (onedaypay > threemonthpay or onemonthpay > threemonthpay):
-            ix = i + 1
             threemonthpay = dp[i-3] + threemonthpay
-            temp.append((threemonthpay, ix))
-
-        temp = list(sorted(temp))
-        dp[i] = temp[0][0]
-        find(temp[0][1])
+            if tempmin > threemonthpay:
+                tempmin = threemonthpay
+        dp[i] = tempmin
+        find(i + 1)
 
 for tc in range(int(input())):
     oneday, onemonth, threemonth, mymin = map(int, input().split())
