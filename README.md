@@ -239,3 +239,134 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
 
 
 
+---
+
+## 1008-1020 STUDY! GRIT! D-12
+
+평균1시간30분씩 걸리는 문제들입니다! 하루 3개 이상 푸는거 목표!
+삼성 기출/유명한 문제로 골랐습니다.
+
+  :star: : 삼성 A형 기출 문제
+
+  :heavy_check_mark: : 풀었던 문제
+
+  :cherry_blossom: : 좋아 보이는 문제
+
+  ## Queue
+
+  - 10845: 큐
+  - 2164: 카드2
+  - 1966: 프린터 큐 :cherry_blossom:
+  - 3078: 좋은 친구
+  - 10866: 덱
+  - 5430: AC
+
+  
+
+  ## Stack
+
+  - 10828: 스택
+  - 1725: 히스토그램 :cherry_blossom:
+  - 2304: 창고 다각형
+  - 2841: 외계인의 기타 연주
+  - 3986: 좋은 단어
+  - 5076: Web Pages
+  - 16637: 괄호 추가하기 :star:
+  - 17070: 파이프 옮기기1 :star::heavy_check_mark:
+
+  
+
+  ## Graph
+
+  - 1991: 트리 순회 :cherry_blossom:
+  - 11725: 트리의 부모 찾기 :cherry_blossom:
+  - 1167: 트리의 지름 :cherry_blossom:
+  - 1967: 트리의 지름 :cherry_blossom:
+
+  
+
+  ## DFS & BFS
+
+  - 17136: 색종이 붙이기 :star::heavy_check_mark:
+  - 3019: 테트리스 :cherry_blossom:
+  - 2234: 성곽 :cherry_blossom:
+  - 12906: 새로운 하노이 탑
+  - 14395: 4연산
+  - 2151: 거울 설치 :cherry_blossom:
+  - 16932: 모양 만들기 :cherry_blossom:
+  - 16947: 서울 지하철 2호선 :cherry_blossom:
+  - 16959: 체스판 여행1 :cherry_blossom:
+  - 16928: 뱀과 사다리 게임
+  - 16948: 데스 나이트
+  - 16234: 인구이동 :heavy_check_mark:
+  - 16236: 아기 상어 뚜루루뚜루 :cherry_blossom:
+  - 16920: 확장 게임
+  - 16954: 움직이는 미로 탈출
+  - 16973: 직사각형 탈출 :heavy_check_mark:
+  - 1600: 말이 되고픈 원숭이 :cherry_blossom:
+  - 3197: 백조의 호수
+  - 16137: 견우와 직녀
+  - 2644: 촌수계산
+  - 2178: 미로 탐색
+  - 6593: 상범 빌딩
+  - 5427: 불
+  - 3055: 탈출
+  - 2206: 벽 부수고 이동하기 :heavy_check_mark:
+  - 7576: 토마토 :cherry_blossom:
+  - 7562: 나이트의 이동
+  - 5014: 스타트링크
+  - 1697: 숨바꼭질 :cherry_blossom:
+  - 16397: 탈출
+  - 9019: DSLR 
+  - 1525: 퍼즐
+  - 1039: 교환
+  - 11724: 연결 요소의 개수 :heavy_check_mark:
+  - 1012: 유기농 배추 :cherry_blossom:
+  - 1743: 음식물 피하기
+  - 2667: 단지 번호 붙이기 :heavy_check_mark:
+  - 2583: 영역 구하기
+  - 10026: 적록색약
+  - 11403: 경로 찾기 :cherry_blossom:
+  - 2468: 안전 영역 :heavy_check_mark:
+  - 10052: DOM
+  - 9466: 텀 프로젝트 :cherry_blossom:
+  - 10265: MT
+
+  
+
+  ## Simulation
+
+  - 14891: 톱니바퀴 :star:
+  - 15662: 톱니바퀴2 :star:
+  - 16918: 봄버맨
+  - 4210: 로봇 청소기 :star:
+  - 14890: 경사로 :star:
+  - 3190: 뱀 :star:
+  - 15863: 드래곤 커브 :star:
+  - 2933: 미네랄
+  - 2290: LCD Test
+  - 17135: 캐슬 디펜스 :star::heavy_check_mark:
+
+  
+
+  ## 삼성 A형 기출 문제
+
+  - 17471: 게리맨더링 :star::heavy_check_mark:
+  - 17406: 배열 돌리기4 :star:
+  - 17281: ⚾ :star:
+  - 13460: 구슬 탈출2 :star:
+  - 13458: 시험 감독 :star:
+  - 14499: 주사위 굴리기 :star:
+  - 14500: 테트로미노 :star:
+  - 14501: 퇴사 :star::heavy_check_mark:
+  - 14502: 연구소 :star::heavy_check_mark:
+  - 14888: 연산자 끼워넣기 :star:
+  - 14889: 스타트와 링크 :star::heavy_check_mark:
+  - 15683: 감시 :star:
+  - 15684: 사다리 조작 :star:
+  - 15686: 치킨 배달 :star::heavy_check_mark:
+  - 17144: 미세먼지 안녕! :star:
+  - 17143: 낚시왕 :star:
+  - 17140: 이차원 배열과 연산 :star:
+  - 17142: 연구소3 :star::heavy_check_mark:
+  - 17472: 다리 만들기2 :star:
