@@ -99,8 +99,9 @@ adj_list = [ [] for i in range(name+1)]
 for one in landname:
     children = getinfo(one)
     adj_list[one].extend(children)
+# print(adj_list)
 
-
+# print('--', adj_list)
 # 시간초과
 # landname을 하나씩 돌면서, -2가 자식에 있다면 안전한 것 또는 -2를 만난다면 안전한것, 그렇지 않다면 안전하지 않다.
 #
@@ -134,78 +135,158 @@ for one in landname:
 
 
 # 판단 다시
+#
+#
+# myfinalvisit = [False]*(name+1)
+# safe = []
+# inner = []
+# cnt = 0
+# for one in landname:
+#     if -2 in adj_list[one]:
+#         cnt += 1
+#         myfinalvisit[one] = True
+#         safe.append(one)
+#         for i in adj_list[one]:
+#             # print(adj_list[one])
+#             # print(i)
+#             if i != -2:
+#                 inner.append(i)
+#         adj_list[one] = [-2]
+# # print(inner) # 2가 1의 inner에 들어있는 정점이라는 소리다. 가장 안쪽에 있는게 단말노드이다.
+# # print(adj_list)
+# # print(cnt)
+#
+# # -2를 자식으로 가지면 무조건 safe한 섬이다.
+# # -2를 가지면 가장 바깥쪽에 있는 섬이며, -2 를 제외하고 (그 섬들이 다수인 경우 그 안에 있는 섬들도 안전하고),
+#
+#
+# def divide(o, visit):
+#
+#     if len(adj_list[o]) == 1 or visit[o] == True:
+#         visit[o] = True
+#         return o
+#
+#     for i in adj_list[o]:
+#         visit[i] = True
+#         divide(i, visit)
+#
+#     return False
+#
+#
+#
+# danger = []
+# if len(inner) == 1:
+#     danger.append(inner)
+# else:
+#     # 다수인 경우,
+#     for one in inner:
+#         if myfinalvisit[one] == False:
+#             if len(adj_list[one]) == 1:
+#                 danger.append(one)
+#             else:
+#                 myfinalvisit[one] = True
+#                 ok = divide(one, myfinalvisit)
+#                     # 안에있는 자식을 하나만 가지거나 아무것도 가지지 않을때까지진행한다.
+#                 if ok == False:
+#                     danger.append(one)
+#                     break
+# # 그 섬이 가진 자식이 하나라면(공통되며, 하나라면), 그 자식은 안전하지만 그 안에있는 자식은 안전하지 않다.
+# # 그러므로 안전하다고 판단된 자식들을 제외하고는 모두 안전하지 않은 것이 된다.
+# # print(danger)
+# # print(inner)
+# if danger != []:
+#     oklands = set(landname) - set(danger[0])
+#     innerdanger = set(landname) - (set(oklands) & set(danger[0]))
+# else:
+#     oklands = set(landname) - set(danger)
+#     innerdanger = set(landname) - (set(oklands) & set(danger))
+#
+# for y in range(N):
+#     for x in range(M):
+#         if earth[y][x] in oklands:
+#             final[y][x] = 'O'
+#         elif earth[y][x] in danger or earth[y][x] in innerdanger:
+#             final[y][x] = 'X'
+#
+# for res in final:
+#     print(''.join(res))
+#
+#
+#
+#
+
+# adj_list = [set() for _ in range(name+1)]
+# for r in range(1, N):
+#     cur = -2
+#     for c in range(1, M):
+#         if earth[r][c] != '.' and earth[r][c] != cur:
+#             new = earth[r][c]
+#             adj_list[cur].add(new)
+#             adj_list[new].add(cur)
+#             cur = new
+# for c in range(1, M):
+#     cur = -2
+#     for r in range(1, N):
+#         if earth[r][c] != '.' and earth[r][c] != cur:
+#             new = earth[r][c]
+#             adj_list[cur].add(new)
+#             adj_list[new].add(cur)
+#             cur = new
+# adj = [list(i) for i in adj_list]
+# print(adj)
+safe = [False] * (name+1)
+# print(name)
+for i in range(1, name+1):
+    # print(i)
+    if -2 in adj_list[i]:
+        safe[i] = True
+# print(safe)
+# print(adj)
+for i in range(1, name+1):
+    if safe[i]:
+        continue
+    for j in range(1, name+1):
+        if i == j:
+            continue
+        vis = [False] * (name+1)
+        stack = collections.deque([])
+        stack.extend(adj_list[i])
+        flag = True
+        while stack:
+
+            node = stack.pop()
+            # print(node)
+            if node == -2:
+                flag = False
+                break
+            if not vis[node] and node != j:
+                vis[node] = True
+                stack.extend(adj_list[node])
+        if flag:
+            # print(flag)
+            break
+    if not flag:
+        safe[i] = True
+        # print(safe[i])
+# print(safe)
+
+for r in range(N):
+    for c in range(M):
+        if earth[r][c] == '.':
+            continue
+        island = earth[r][c]
+        if not island:
+            earth[r][c] = '.'
+        elif safe[island]:
+            earth[r][c] = '0'
+        else:
+            earth[r][c] = 'X'
+
+for r in range(N):
+    for c in range(M):
+        if r == 0 or c == 0 or r == N - 1 or c == M - 1:
+            earth[r][c] = '.'
 
 
-myfinalvisit = [False]*(name+1)
-safe = []
-inner = []
-cnt = 0
-for one in landname:
-    if -2 in adj_list[one]:
-        cnt += 1
-        myfinalvisit[one] = True
-        safe.append(one)
-        for i in adj_list[one]:
-            # print(adj_list[one])
-            # print(i)
-            if i != -2:
-                inner.append(i)
-        adj_list[one] = [-2]
-# print(inner) # 2가 1의 inner에 들어있는 정점이라는 소리다. 가장 안쪽에 있는게 단말노드이다.
-# print(adj_list)
-# print(cnt)
-
-# -2를 자식으로 가지면 무조건 safe한 섬이다.
-# -2를 가지면 가장 바깥쪽에 있는 섬이며, -2 를 제외하고 (그 섬들이 다수인 경우 그 안에 있는 섬들도 안전하고),
-
-
-def divide(o, visit):
-
-    if len(adj_list[o]) == 1 or visit[o] == True:
-        visit[o] = True
-        return o
-
-    for i in adj_list[o]:
-        visit[i] = True
-        divide(i, visit)
-
-    return False
-
-
-
-danger = []
-if len(inner) == 1:
-    danger.append(inner)
-else:
-    # 다수인 경우,
-    for one in inner:
-        if myfinalvisit[one] == False:
-            if len(adj_list[one]) == 1:
-                danger.append(one)
-            else:
-                myfinalvisit[one] = True
-                ok = divide(one, myfinalvisit)
-                    # 안에있는 자식을 하나만 가지거나 아무것도 가지지 않을때까지진행한다.
-                if ok == False:
-                    danger.append(one)
-                    break
-# 그 섬이 가진 자식이 하나라면(공통되며, 하나라면), 그 자식은 안전하지만 그 안에있는 자식은 안전하지 않다.
-# 그러므로 안전하다고 판단된 자식들을 제외하고는 모두 안전하지 않은 것이 된다.
-# print(danger)
-# print(inner)
-if danger != []:
-    oklands = set(landname) - set(danger[0])
-    innerdanger = set(landname) - (set(oklands) & set(danger[0]))
-else:
-    oklands = set(landname) - set(danger)
-    innerdanger = set(landname) - (set(oklands) & set(danger))
-
-for y in range(N):
-    for x in range(M):
-        if earth[y][x] in oklands:
-            final[y][x] = 'O'
-        elif earth[y][x] in danger or earth[y][x] in innerdanger:
-            final[y][x] = 'X'
-
-for res in final:
-    print(''.join(res))
+for r in range(N):
+    print(''.join(earth[r]))
