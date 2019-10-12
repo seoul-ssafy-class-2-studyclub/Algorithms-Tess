@@ -49,12 +49,9 @@ import sys
 sys.setrecursionlimit(100000)
 
 def calculate(a, b, op):
-
     ret = 0
-
     if op == '+':
         ret = a + b
-
 
     if op == '-':
         ret = a - b
@@ -68,18 +65,34 @@ def calculate(a, b, op):
 
 def solve(res, opidx):
     global result, numbers, operators
+    # print(res)
 
+    '''
+    [재귀 탈출 조건]
+    연산자의 인덱스를 초과하여 현재 가리키는 연산자가 없는 경우
+    계산된 결과를 비교하여 최대값으로 업데이트하는 작업을 수행한 뒤 종료
+    '''
     if opidx >= No:
+        print(res)
         if result < res:
             result = res
         return
 
     nowresult = calculate(res, numbers[opidx+1], operators[opidx])
+    '''
+    1. 이전 계산 결과와 오른쪽에 있는 피연산자를 피연산자로 하여
+    현재 가리키는 연산자의 연산을 수행하는 함수 
+    (왼쪽부터 순서대로 계산하게 됨)
+    '''
     solve(nowresult, opidx + 1)
 
     if opidx + 2 < Nn:
         nextresult = calculate(numbers[opidx+1], numbers[opidx+2], operators[opidx+1])
         nowresult = calculate(res, nextresult, operators[opidx])
+        '''
+        2. 이전 계산 결과와 오른쪽에 있는 연산자의 연산 수행 결과를 피연산자로 하여
+        현재 가리키는 연산자의 연산을 수행하는 함수 
+        '''
         solve(nowresult, opidx+2)
 
 N = int(input())

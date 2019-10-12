@@ -23,12 +23,13 @@ BFS로 계속 풀어서 그런지 이게 편하네요.
 
 # DFS로 끝까지 탐색하고, 끝날때 들고있는 cost가 큰경우 갱신시킨다.
 def find(s, cnt, visit):
-    global adj_list, maxcost
+    global adj_list, maxcost, x
 
     visit[s] = True
 
     if maxcost <= cnt:
         maxcost = cnt
+        x = s
 
     for children in adj_list[s]:
         kidid, costs = children
@@ -44,13 +45,49 @@ for v in range(V):
     q = data[1:-1]
     for i in range(0, len(q), 2):
         adj_list[data[0]].append((q[i], q[i+1]))
+
 # print(adj_list)
 maxcost = -1
-for start in range(1, V+1):
-    visited = [False] * (V + 1)
-    find(start, 0, visited)
+x = 0
+visited = [False] * (V + 1)
+find(1, 0, visited)
+
+visited = [False] * (V + 1)
+find(x, 0, visited)
 
 print(maxcost)
+
+#
+# # DFS로 끝까지 탐색하고, 끝날때 들고있는 cost가 큰경우 갱신시킨다.
+# def find(s, cnt, visit):
+#     global adj_list, maxcost
+#
+#     visit[s] = True
+#
+#     if maxcost <= cnt:
+#         maxcost = cnt
+#
+#     for children in adj_list[s]:
+#         kidid, costs = children
+#
+#         if visit[kidid] == False:
+#             find(kidid, cnt+costs, visit)
+#
+# V = int(input())
+# adj_list = [[] for _ in range(V+1)] # 1부터 시작하므로 V+1을 해준다.
+#
+# for v in range(V):
+#     data = list(map(int, input().split()))
+#     q = data[1:-1]
+#     for i in range(0, len(q), 2):
+#         adj_list[data[0]].append((q[i], q[i+1]))
+# # print(adj_list)
+# maxcost = -1
+# for start in range(1, V+1):
+#     visited = [False] * (V + 1)
+#     find(start, 0, visited)
+#
+# print(maxcost)
 
 
 
