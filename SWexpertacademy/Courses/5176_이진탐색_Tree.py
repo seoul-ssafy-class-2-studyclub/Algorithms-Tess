@@ -30,8 +30,5 @@ for tc in range(1, int(input())+1):
     N = int(input())  # 정점의 수
     idx = 1
     tree = [0 for i in range(N + 1)]  # 리스트를 이용한 완전 이진 트리 저장
-    # print(N)
-    # print(tree)
     inorder(1) # 루트번호는 1부터시작한다.
-    # print(tree)
     print('#{} {} {}'.format(tc, tree[1], tree[N // 2]))
