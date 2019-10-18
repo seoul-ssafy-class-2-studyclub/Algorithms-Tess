@@ -37,6 +37,7 @@ Directory:
     - Samsung 
       문제등급_제목_알고리즘  
     - 카카오
+    - Line&Naver
     
 
 ---
@@ -111,8 +112,8 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
 - [봄버맨](https://www.acmicpc.net/problem/16918)
 - 주사위 굴리기
 - 톱니바퀴
-- 톱니바퀴 (2)
-- 로봇 청소기
+- :heavy_check_mark:톱니바퀴 (2)
+- :heavy_check_mark:로봇 청소기
 - :heavy_check_mark: 경사로
 - 뱀
 - 드래곤 커브
@@ -141,7 +142,7 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
 - [차량 번호판 1](https://www.acmicpc.net/problem/16968)
 - [십자가 2개 놓기](https://www.acmicpc.net/problem/17085)
 - [등차수열 변환](https://www.acmicpc.net/problem/17088)
-- [캐슬 디펜스](https://www.acmicpc.net/problem/17135)
+- :heavy_check_mark:[캐슬 디펜스](https://www.acmicpc.net/problem/17135)
 - :heavy_check_mark: [색종이 붙이기](https://www.acmicpc.net/problem/17136)
 - :heavy_check_mark: 테트로미노
 - 링크와 스타트
@@ -182,7 +183,7 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
 - 벽 부수고 이동하기 2
 - 말이 되고픈 원숭이
 - 적록색약
-- 성곽
+- :heavy_check_mark:성곽
 - 백조의 호수
 - 새로운 하노이 탑
 - 4 연산
@@ -206,6 +207,7 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
 
 - [배열 돌리기 1](https://www.acmicpc.net/problem/16926)
 - [배열 돌리기 3](https://www.acmicpc.net/problem/16935)
+- :heavy_check_mark:배열 돌리기 4​
 - [양념 반 후라이드 반](https://www.acmicpc.net/problem/16917)
 - [나3곱2](https://www.acmicpc.net/problem/16936)
 - [십자가 찾기](https://www.acmicpc.net/problem/16924)
@@ -274,16 +276,19 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
   - 16637: 괄호 추가하기 :star:
   - 17070: 파이프 옮기기1 :star::heavy_check_mark:
 
-  
+
 
   ## Graph
 
-  - 1991: 트리 순회 :cherry_blossom:
-  - 11725: 트리의 부모 찾기 :cherry_blossom:
-  - 1167: 트리의 지름 :cherry_blossom:
-  - 1967: 트리의 지름 :cherry_blossom:
+  - 1991: 트리 순회 :cherry_blossom::heavy_check_mark:
 
-  
+  - 11725: 트리의 부모 찾기 :cherry_blossom::heavy_check_mark:
+
+  - 1167: 트리의 지름 :cherry_blossom::heavy_check_mark:
+
+  - 1967: 트리의 지름 :cherry_blossom::heavy_check_mark:
+
+    
 
   ## DFS & BFS
 
@@ -312,7 +317,7 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
   - 5427: 불
   - 3055: 탈출
   - 2206: 벽 부수고 이동하기 :heavy_check_mark:
-  - 7576: 토마토 :cherry_blossom:
+  - 7576: 토마토 :cherry_blossom::heavy_check_mark:
   - 7562: 나이트의 이동
   - 5014: 스타트링크
   - 1697: 숨바꼭질 :cherry_blossom:

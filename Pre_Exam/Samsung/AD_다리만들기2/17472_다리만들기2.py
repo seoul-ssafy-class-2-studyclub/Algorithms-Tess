@@ -222,12 +222,10 @@
 
 
 import sys
-
 # sys.stdin = open('17472.txt', 'r')
 input = sys.stdin.readline
 import collections
 import heapq
-
 
 def numbering(Y, X, num):
     global numberingvisit, earth, startyx
@@ -248,10 +246,8 @@ def numbering(Y, X, num):
                 q.append((iy, ix))
                 startyx[num].append((iy, ix))
 
-
 N, M = map(int, input().split())
 earth = [list(map(int, input().split())) for _ in range(N)]
-
 numberingvisit = [[False] * M for _ in range(N)]
 number = 1
 startyx = {}
@@ -261,9 +257,6 @@ for y in range(N):
             startyx[number] = []
             numbering(y, x, number)
             number += 1
-
-name = [i for i in range(0, number)]
-
 
 def newfind(y, x, direction, parent):
     global earth, newadj_list, adj_list
@@ -278,13 +271,9 @@ def newfind(y, x, direction, parent):
             if earth[iy][ix] != parent and earth[iy][ix] != 0 and cost >= 2:
                 newadj_list[parent].add((earth[iy][ix], cost))
                 newadj_list[earth[iy][ix]].add((parent, cost))
-                adj_list[parent].append(earth[iy][ix])
-                adj_list[earth[iy][ix]].append(parent)
             elif earth[iy][ix] == 0 and earth[iy][ix] != parent:
                 q.append((iy, ix, cost + 1))
 
-
-adj_list = [[] for _ in range(number + 1)]
 newadj_list = [set() for _ in range(number + 1)]
 for i in range(1, number):
     starts = startyx[i]
@@ -296,14 +285,13 @@ for i in range(1, number):
 
 # 연결요소 부분 DFS 처리
 def isCC(start, visit):
-    global adj_list
+    global newadj_list
     visit[start] = True
-
-    for child in adj_list[start]:
+    for child, tra in newadj_list[start]:
         if visit[child] == False:
             isCC(child, visit)
 
-# Prim 외워요
+# Prim
 def prim(start):
     global cost
     visit = [False] * number
@@ -320,12 +308,11 @@ def prim(start):
                 cost[child] = nxtcost
                 heapq.heappush(q, (nxtcost, child))
 
-finalresult = -1
 CCvisit = [True] + [False] * (number - 1)
 isCC(1, CCvisit)
 if False not in CCvisit:
-    cost = [99999] * (number)
+    cost = [99999] * number
     prim(1)
     print(sum(cost[1:]))
 else:
-    print(finalresult)
+    print(-1)

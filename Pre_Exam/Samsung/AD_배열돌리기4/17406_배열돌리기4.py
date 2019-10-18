@@ -11,7 +11,7 @@ def rotate(m, d):
         r,c,s = n
         r, c = r-1, c-1
 
-        for i in range(1, s+1): # 0부터 s까지, 가장 안에서부터 시작한다.
+        for i in range(1, s+1): # 0부터 s까지, 가장 안에서부터 시작한다. 0은 어차피 가만히 있으니까, 1부터 시작하도록 했다.
             temp = d[r-i][c-i]
             for x in range(c-i, c+i): # 오른쪽
                 temp, d[r-i][x+1] = d[r-i][x+1], temp
