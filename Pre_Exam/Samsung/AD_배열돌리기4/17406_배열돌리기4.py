@@ -2,7 +2,7 @@
 12
 '''
 import sys
-# sys.stdin = open('17406.txt', 'r')
+sys.stdin = open('17406.txt', 'r')
 import itertools
 input = sys.stdin.readline
 
