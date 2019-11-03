@@ -4,20 +4,25 @@
 '''
 
 import sys
-# sys.stdin = open('9466.txt', 'r')
+sys.stdin = open('9466.txt', 'r')
 sys.setrecursionlimit(10**6)
 '''
+Cycle을 확인해서 하나의 팀인 애들을 확인하기 위해서는 아래와 같은 요소들이 필요하다.
 1) 각각의 학생을 방문했는지에 대한 유무 (visited)
 2) 방문할 때마다 몇 번 째로 방문했는지 (cnt)
 3) 방문할 때 가장 첫 번째로 시작한 학생이 누구인지를 각각 비교해야 한다. (cycle 확인)
 '''
 
-def find(start, parent):
-    global res
-    if start == parent:
-        res.append(start)
-    elif arr[start] != 0:
-        find(arr[start], parent)
+def find(start, parent, cnt, pre):
+    global visited
+    visited[parent] = True
+    res[start].append(parent, cnt)
+    if visited[start] == True:
+        return (res[pre], res[start])
+
+    elif visited[start] == False:
+        find(arr[start], parent, cnt+1, start)
+
 
 T = int(input())
 for _ in range(T):
@@ -28,25 +33,17 @@ for _ in range(T):
 
     sub = 0
     for i in range(1, N+1):
-        # 1. 일단, 자기자신을 팀으로 가진 경우를 확인한다.
-        # 1-1. 확인된 경우는 팀이 가능한 경우므로 제외시킨다.
-        if i == data[i-1]:
-            sub += 1
-            continue
+        # 1. 그래프를 1부터 시작해서 그린다.
         arr[i] = data[i-1]
     # 2. 그러한 경우를 제외한 시작점에서 시작해서 다시 시작점으로 돌아오는 사이클을 가진 한 팀인지 확인한다.
-    # 다시 시작점으로 돌아오지 못하는 경우는 팀이 아니므로 넘어간다.
 
-    res = []
+    visited = [False]*(N+1)
+    res = [[] for _ in range(N+1)] # 시작의 부모와 cnt를 저장할 곳
     for i in range(1, N+1):
-        if arr[i] != 0:
+        if not visited: # False 라서 방문하지 않았다면,
             # 비지않았다면 들어간다.
-            find(arr[i], i)
-
-    result = N - len(res) - sub
-    print(result)
-
-
+            ans = find(arr[i], i, 2, i)
+    print(ans)
 '''
 import sys
 sys.setrecursionlimit(10**6)
