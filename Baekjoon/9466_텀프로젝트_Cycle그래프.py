@@ -20,6 +20,7 @@ def find(start, parent, cnt, pre):
     if visited[start] == True:
         return (res[pre], res[start])
 
+
     elif visited[start] == False:
         find(arr[start], parent, cnt+1, start)
 
