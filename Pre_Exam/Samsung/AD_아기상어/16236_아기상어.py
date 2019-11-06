@@ -1,7 +1,3 @@
-import sys
-sys.stdin = open('16236.txt', 'r')
-
-# heapq 사용하여 풀기
 '''
 N x N 공간
 물고기 M마리
@@ -25,7 +21,7 @@ N x N 공간
     - 거리: 먹으러 갈때 지나야하는 최소 칸의 개수
     - 거리가 똑같은 곳에 물고기가 있다면,1) 가장위 
                                 2) 위에서 많으면 가장왼쪽
-                                
+
 ---입력---
 첫째 줄에 공간의 크기 N(2 ≤ N ≤ 20)이 주어진다.
 둘째 줄부터 N개의 줄에 공간의 상태가 주어진다. 공간의 상태는 0, 1, 2, 3, 4, 5, 6, 9로 이루어져 있고, 아래와 같은 의미를 가진다.
@@ -36,41 +32,65 @@ N x N 공간
 아기 상어는 공간에 한 마리 있다.
 
 '''
-
+import sys
+# sys.stdin = open('16236.txt', 'r')
+input = sys.stdin.readline
 N = int(input())
 underWater = []
 for _ in range(N):
     data = list(map(int, input().split()))
     underWater.append(data)
-print(underWater)
 
-# 돌면서 데이터를 리스트에 받을건데,
-# 힙큐를 사용할것
-# size, [distance], y, x 순으로 저장해서 우선순위에 따른 데이터 정렬을 할 예정
 shark = []
-foods = []
 for y in range(N):
     for x in range(N):
-        if 1 <= underWater[y][x] <= 6:
-            foods.append([underWater[y][x], y, x])
-        elif underWater[y][x] == 9:
-            shark.append([2, y, x])
-
-# 계속 갱신될 정보
-foods = sorted(foods)
+        if underWater[y][x] == 9:
+            shark.append([2, y, x, 0])
+            underWater[y][x] = 0
 # 먹으면 shark의 칸은 food의 칸과 바꿔진다.
-print(foods)
+# 크기가 크거나 같은 애들밖에 없는 경우
 
-# 계속 갱신될 정보 => 딕셔너리로 바꿀까?
-print(shark)
-for i in range(len(foods)):
-    disy = abs(shark[0][1]-foods[i][1])
-    disx = abs(shark[0][2]-foods[i][2])
-    # 계속 갱신될 정보
-    distance = disx + disy
-    foods[i].insert(1, distance)
-    print(distance)
-print(foods)
+# 결과가 나올때까지 함수를 계속해서 돌려야 하므로, while문 안에 둔다
 
-# 모든 물고기들이 가진 거리를 shark를 기준으로 계산한다.
+time = 0
+while True:
+    q = []
+    q.append((shark[0][0], shark[0][1], shark[0][2], 0, shark[0][3]))
+
+    foods = []
+    visited = [[False]*N for _ in range(N)]
+
+    while q:
+        size, y, x, dist, cnt = q.pop(0)
+        visited[y][x] = True
+        for dy, dx in [(1,0), (-1,0), (0,1), (0,-1)]:
+            iy = dy + y
+            ix = dx + x
+            if 0 <= iy < N and 0 <= ix < N and visited[iy][ix] == False:
+                if underWater[iy][ix] < size and underWater[iy][ix] != 0:
+                    foods.append((dist + 1, iy, ix, underWater[iy][ix]))
+                    q.append((size, iy, ix, dist + 1, cnt))
+                    visited[iy][ix] = True
+                elif underWater[iy][ix] == size or underWater[iy][ix] == 0:
+                    q.append((size, iy, ix, dist + 1, cnt))
+                    visited[iy][ix] = True
+    # 자신의 크기와 같은 수의 물고기를 먹을 때 마다 크기가 1 증가한다.
+    # 예를 들어,
+    # 크기가 2인 아기 상어는 물고기를 2마리 먹으면 크기가 3이 된다.
+    foods = sorted(foods)
+    if len(foods) == 0:
+        break
+
+    if len(foods) != 0:
+        foodsDistance, foodsy, foodsx, foodsSize = foods[0][0], foods[0][1], foods[0][2], foods[0][3]
+        shark[0][3] += 1
+        underWater[foodsy][foodsx] = 0
+        time += foodsDistance
+        shark[0][1], shark[0][2] = foodsy, foodsx
+        if shark[0][0] == shark[0][3]:
+            # 1이 크면 다시 탐색해서 다음 애들도 내 순위로 넣을 수 있다. 그러니까 다시 탐색하러 가자.
+            shark[0][0] += 1
+            shark[0][3] = 0
+
+print(time)
 
