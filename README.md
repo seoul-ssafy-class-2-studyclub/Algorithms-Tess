@@ -111,7 +111,7 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
 - [큐빙](https://www.acmicpc.net/problem/5373)
 - [봄버맨](https://www.acmicpc.net/problem/16918)
 - 주사위 굴리기
-- 톱니바퀴
+- :heavy_check_mark:톱니바퀴
 - :heavy_check_mark:톱니바퀴 (2)
 - :heavy_check_mark:로봇 청소기
 - :heavy_check_mark: 경사로
@@ -120,6 +120,7 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
 - 미네랄
 - iSharp
 - LCD Test
+- :heavy_check_mark: 아기상어
 
 ### 브루트 포스
 
@@ -171,7 +172,7 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
 - [확장 게임](https://www.acmicpc.net/problem/16920)
 - [벽 부수고 이동하기 4](https://www.acmicpc.net/problem/16946)
 - [모양 만들기](https://www.acmicpc.net/problem/16932)
-- [서울 지하철 2호선](https://www.acmicpc.net/problem/16947)
+- :heavy_check_mark:[서울 지하철 2호선](https://www.acmicpc.net/problem/16947) 
 - [체스판 여행 1](https://www.acmicpc.net/problem/16959)
 - [움직이는 미로 탈출](https://www.acmicpc.net/problem/16954)
 - :heavy_check_mark:[직사각형 탈출](https://www.acmicpc.net/problem/16973)
@@ -299,7 +300,7 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
   - 14395: 4연산
   - 2151: 거울 설치 :cherry_blossom:
   - 16932: 모양 만들기 :cherry_blossom:
-  - 16947: 서울 지하철 2호선 :cherry_blossom:
+  - 16947: 서울 지하철 2호선 :cherry_blossom: :heavy_check_mark:
   - 16959: 체스판 여행1 :cherry_blossom:
   - 16928: 뱀과 사다리 게임
   - 16948: 데스 나이트
@@ -341,8 +342,8 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
 
   ## Simulation
 
-  - 14891: 톱니바퀴 :star:
-  - 15662: 톱니바퀴2 :star:
+  - 14891: 톱니바퀴 :star::heavy_check_mark:
+  - 15662: 톱니바퀴2 :star::heavy_check_mark:
   - 16918: 봄버맨
   - 4210: 로봇 청소기 :star:
   - 14890: 경사로 :star:
@@ -357,7 +358,7 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
   ## 삼성 A형 기출 문제
 
   - 17471: 게리맨더링 :star::heavy_check_mark:
-  - 17406: 배열 돌리기4 :star:
+  - 17406: 배열 돌리기4 :star::heavy_check_mark:
   - 17281: ⚾ :star:
   - 13460: 구슬 탈출2 :star:
   - 13458: 시험 감독 :star:
@@ -367,11 +368,11 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
   - 14502: 연구소 :star::heavy_check_mark:
   - 14888: 연산자 끼워넣기 :star:
   - 14889: 스타트와 링크 :star::heavy_check_mark:
-  - 15683: 감시 :star:
+  - 15683: 감시 :star::heavy_check_mark:  
   - 15684: 사다리 조작 :star:
   - 15686: 치킨 배달 :star::heavy_check_mark:
   - 17144: 미세먼지 안녕! :star:
-  - 17143: 낚시왕 :star:
+  - 17143: 낚시왕 :star::heavy_check_mark:
   - 17140: 이차원 배열과 연산 :star:
   - 17142: 연구소3 :star::heavy_check_mark:
-  - 17472: 다리 만들기2 :star:
+  - 17472: 다리 만들기2 :star::heavy_check_mark:
