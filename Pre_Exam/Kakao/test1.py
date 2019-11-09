@@ -245,3 +245,14 @@ result
 # solution(k, room_number)
 # # print(order)
 
+def solution(k, room_number):
+   answer = []
+   linking = {i:0 for i in range(k+1)}
+   for i in room_number:
+       currnt_idx = i
+       while linking[currnt_idx] != 0 :
+           currnt_idx = linking[currnt_idx]
+       linking[currnt_idx] = currnt_idx+1
+       currnt_room = room_list[currnt_idx]
+       answer.append(currnt_room)
+   return answer
