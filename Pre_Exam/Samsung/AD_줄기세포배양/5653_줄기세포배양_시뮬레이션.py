@@ -39,26 +39,24 @@ d = [(0, 1), (0, -1), (1, 0), (-1, 0)]
 T = int(input())
 for tc in range(1): # 테케1만
     N, M, K = map(int, input().split())
-    XM = M+K+2
-    XN = N+K+2
+    XM = M+(K+2)
+    XN = N+(K+2)
     #보드 진행할때 사용
 
     board = [ list(map(int, input().split())) for _ in range(N) ]
-    #board = [[0]*(N+K) for _ in range(M+K)]
     chk = [[0]*XN for _ in range(XM)]
-    #board[M:M+M][N:N+N] += [ list(map(int, input().split()))[:] for _ in range(N) ]
     pprint(chk)
 
     cells_info = []
     for y in range(N):
         for x in range(M):
             if board[y][x] != 0: # 0이 아니라면 cell이 존재하므로
-                board[y][x] = [(y, x), board[y][x], 1, 0]
+                board[y][x] = [board[y][x], 1, 0, y, x]
                 cells_info.append(board[y][x])
     pprint(cells_info)
+    cells_info = list(reversed(list(sorted(cells_info))))
 
-    print(board)
-    #for hr in range(1): # K
+    pprint(cells_info)
 
     # [(y, x)좌표, 생명력, status(0 죽음 1 비활성 2 활성), 생명력과 비례한 나이]를 2차원 배열에 추가
     # cell : 생명력, 죽은상태, 비활성상태, 활성상태, 태어나서 시간이 얼마나 지났는지 카운트될곳
@@ -66,3 +64,6 @@ for tc in range(1): # 테케1만
 
     # 비활성 시간이 지났을 경우 활성상태로 바꿔준다
     # 활성상태에서 번식 시작하고 번식이 끝난 셀은 죽은 상태로 바꾼다.
+
+
+    for k in range(1, K+1):
