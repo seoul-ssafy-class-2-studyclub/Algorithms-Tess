@@ -1,7 +1,7 @@
 '''
 simple problem
 used the for loop for iterating over the list of the str elements
-I used the fin for as a point to differ '[.' or ']' when it comes to '.'
+I used the fin as a point to differ '[.' or ']' when it comes to '.'
 '''
 class Solution:
     def defangIPaddr(self, address: str) -> str:
