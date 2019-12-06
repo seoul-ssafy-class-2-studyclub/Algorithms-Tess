@@ -377,3 +377,57 @@ DP - 1463, 11726, 11727, 9095, 10844, 11057, 2193, 9465, 2156, 11053, 11055, 117
   - 17140: 이차원 배열과 연산 :star:
   - 17142: 연구소3 :star::heavy_check_mark:
   - 17472: 다리 만들기2 :star::heavy_check_mark:
+
+삼성 A형 기출
+https://www.acmicpc.net/workbook/view/2771
+삼성그룹 SW직군 역량테스트기출
+https://www.acmicpc.net/workbook/view/1152
+SW역량테스트 대비 유튜브 동영상 na982님
+https://www.youtube.com/channel/UC_KRcBNnFQoN6EsvG87H6cg/videos
+알고리즘 초보 유형익히기
+https://www.acmicpc.net/step
+M과 N(순열 조합, 완탐 뽀개기)
+https://www.acmicpc.net/workbook/view/2052
+난이도 하(SDS 기본반)
+https://www.acmicpc.net/workbook/view/2047
+난이도 중상(SDS 심화반)
+https://www.acmicpc.net/workbook/view/2048
+시뮬뽀개기
+https://www.acmicpc.net/problem/2933
+https://www.acmicpc.net/problem/11559
+https://www.acmicpc.net/problem/3568
+https://www.acmicpc.net/problem/2290
+https://www.acmicpc.net/problem/16113
+https://www.acmicpc.net/problem/15898
+https://www.acmicpc.net/problem/15778
+https://www.acmicpc.net/problem/1194
+https://www.acmicpc.net/problem/3197
+https://www.acmicpc.net/problem/6987
+https://www.acmicpc.net/problem/8911
+https://www.acmicpc.net/problem/16506
+백준 연습해보기
+https://www.acmicpc.net/problem/9663
+https://www.acmicpc.net/problem/2573
+https://www.acmicpc.net/problem/1261
+https://www.acmicpc.net/problem/3184
+https://www.acmicpc.net/problem/10711
+https://www.acmicpc.net/problem/14620
+https://www.acmicpc.net/problem/4179
+https://www.acmicpc.net/problem/3055
+https://www.acmicpc.net/problem/1799
+https://www.acmicpc.net/problem/9376
+https://www.acmicpc.net/problem/14442
+https://www.acmicpc.net/problem/2422
+https://www.acmicpc.net/problem/2933
+https://www.acmicpc.net/problem/16198
+https://www.acmicpc.net/problem/16197
+https://www.acmicpc.net/problem/3019
+https://www.acmicpc.net/problem/2916
+https://www.acmicpc.net/problem/3197
+https://www.acmicpc.net/problem/12906
+SWEA 풀만한 새로나온 문제 추천(중상)
+https://swexpertacademy.com/
+5650. [모의 SW 역량테스트] 핀볼 게임
+5644. [모의 SW 역량테스트] 무선 충전
+5658. [모의 SW 역량테스트] 보물상자 비밀번호
+5656. [모의 SW 역량테스트] 벽돌 깨기

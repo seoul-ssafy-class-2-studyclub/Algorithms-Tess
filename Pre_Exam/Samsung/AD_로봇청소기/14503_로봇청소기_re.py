@@ -21,8 +21,10 @@ def solve(cur_x, cur_y, cur_dir, fin):
         if fin == 4:
             bnext_x = cur_x - dx[cur_dir]
             bnext_y = cur_y - dy[cur_dir]
+            # 2. c
             if board[bnext_x][bnext_y] == 2:
                 cur_x, cur_y, cur_dir, fin = bnext_x, bnext_y, cur_dir, 0
+            # 2. d
             else:
                 return cnt
 
