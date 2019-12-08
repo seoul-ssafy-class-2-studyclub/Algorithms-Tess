@@ -19,11 +19,11 @@ def solve():
             sy, sx, cnt = q.popleft()
 
             if sy == EY and sx == EX:
-                if ans > cnt:
-                    ans = cnt
-                    goal = 1
+                ans = cnt
+                goal = 1
+                return goal, comp, ans
 
-            if T + 1 < cnt:
+            if T + 1 < cnt: # 그냥 cnt가 temp를 넘는지 관리필
                 if goal == 0:
                     return goal, comp, ans
 
@@ -36,15 +36,18 @@ def solve():
 
                         # 정리
                         if comp == 1e9:  # 1을 뚫고가는 가장 빠른길
-                            comp = abs(iy - EY) + abs(ix - EX) + cnt + 1
-                            goal = 1
+                            temp = abs(iy - EY) + abs(ix - EX) + cnt + 1
+
+                            if T + 1 >= temp: # temp가 t를 넘는지 관리필
+                                comp = temp
+                                goal = 1
 
                         q.append((iy, ix, cnt + 1))  # 2를 얻고 0만 갈 수 있기 때문에
 
                     if maze[iy][ix] == 0:  # 0인 길만 갈 수 있다.
                         maze[iy][ix] = 1
                         q.append((iy, ix, cnt + 1))
-        T -= 1
+
     return goal, comp, ans
 
 # y, x, 제한시간
