@@ -61,6 +61,149 @@
 # ans = res[0]
 # print(f'{ans[0]} {ans[1]}')
 
+
+import sys
+from collections import deque
+input = sys.stdin.readline
+N, M = map(int, input().split())
+mymap = [list(input()) for _ in range(N)]
+
+def solve(sy, sx, fy, fx):
+    global mymap, vis, ans
+    q = deque([])
+    # fy,fx를 만나면 더이상 append를 하지 않을거니까
+    q.append([0, 0, sy, sx])
+    while q:
+        for _ in range(len(q)):
+            trashcnt, movedcnt, oy, ox = q.popleft()
+            # 도착점 바로 전
+            for dy, dx in [(1,0),(-1,0),(0,1),(0,-1)]:
+                iy = dy + oy
+                ix = dx + ox
+                # 지나가는거
+                if 0 <= iy < N and 0 <= ix < M:
+                # # 내 인접한 곳에 쓰레기가 있는데, 그 칸을 지나간다면,
+                    if mymap[iy][ix] == 'g':
+                        if 0 <= iy < N and 0 <= ix < M and vis[iy][ix][0] > trashcnt:
+                            vis[iy][ix] = [trashcnt, movedcnt]
+                            q.append((trashcnt + 1, movedcnt, iy, ix))
+
+                        elif 0 <= iy < N and 0 <= ix < M and vis[iy][ix][0] == trashcnt and vis[iy][ix][1] > movedcnt:
+                            vis[iy][ix] = [trashcnt, movedcnt]
+                            q.append((trashcnt + 1, movedcnt, iy, ix))
+
+                    elif mymap[iy][ix] == 'sideg':
+                        if 0 <= iy < N and 0 <= ix < M and vis[iy][ix][0] > trashcnt:
+                            vis[iy][ix] = [trashcnt, movedcnt]
+                            q.append((trashcnt, movedcnt+1, iy, ix))
+
+                        elif 0 <= iy < N and 0 <= ix < M and vis[iy][ix][0] == trashcnt and vis[iy][ix][1] > movedcnt:
+                            vis[iy][ix] = [trashcnt, movedcnt]
+                            q.append((trashcnt, movedcnt+1, iy, ix))
+
+                    elif mymap[iy][ix] == '.':
+                        if 0 <= iy < N and 0 <= ix < M and vis[iy][ix][0] > trashcnt:
+                            vis[iy][ix] = [trashcnt, movedcnt]
+                            q.append((trashcnt, movedcnt, iy, ix))
+                        elif 0 <= iy < N and 0 <= ix < M and vis[iy][ix][0] == trashcnt and vis[iy][ix][1] > movedcnt:
+                            vis[iy][ix] = [trashcnt, movedcnt]
+                            q.append((trashcnt, movedcnt, iy, ix))
+
+gar = []
+for y in range(N):
+    for x in range(M):
+        if mymap[y][x] == 'S':
+            sy, sx = y, x
+            mymap[y][x] = '.'
+        if mymap[y][x] == 'F':
+            fy, fx = y, x
+            mymap[y][x] = '.'
+        if mymap[y][x] == 'g':
+            gar.append((y, x))
+
+# side walk가 될 부분을 미리 저장해 둠으로써 bfs를 돌면서 확인할 필요 없도록 한다.
+for y, x in gar:
+    for dy, dx in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
+        iiy = dy + y
+        iix = dx + x
+        if 0 <= iiy < N and 0 <= iix < M and mymap[iiy][iix] == '.':
+            mymap[iiy][iix] = 'sideg'
+
+INF = float('INF')
+vis = [[[INF,INF]]*M for _ in range(N)]
+vis[sy][sx] = [0, 0]
+solve(sy, sx, fy, fx)
+print(vis[fy][fx][0], vis[fy][fx][1])
+
+
+
+
+
+''''''''''''''''
+
+from collections import deque
+near = [[-1,0],[0,1],[1,0],[0,-1]]
+def go():
+    q = deque([[0,0,sx,sy]])
+    vis = [[[9999,9999] for i in range(m)] for i in range(n)]
+    while q:
+        cg,cn,x,y = q.popleft()
+        for a,b in near:
+            xi, yi = x+a, y+b
+            if 0 <= xi < n and 0 <= yi < m:
+                if bd[xi][yi] == 'g':
+                    if vis[xi][yi][0] > cg:
+                        vis[xi][yi] = [cg,cn]
+                        q.append([cg+1, cn, xi, yi])
+                    elif vis[xi][yi][0] == cg:
+                        if vis[xi][yi][1] > cn:
+                            vis[xi][yi] = [cg,cn]
+                            q.append([cg+1, cn, xi, yi])
+                elif bd[xi][yi] == 'n':
+                    if vis[xi][yi][0] > cg:
+                        vis[xi][yi] = [cg,cn]
+                        q.append([cg, cn+1, xi, yi])
+                    elif vis[xi][yi][0] == cg:
+                        if vis[xi][yi][1] > cn:
+                            vis[xi][yi] = [cg,cn]
+                            q.append([cg, cn+1, xi, yi])
+                elif bd[xi][yi] == '.':
+                    if vis[xi][yi][0] > cg:
+                        vis[xi][yi] = [cg,cn]
+                        q.append([cg,cn,xi,yi])
+                    elif vis[xi][yi][0] == cg:
+                        if vis[xi][yi][1] > cn:
+                            vis[xi][yi] = [cg,cn]
+                            q.append([cg,cn,xi,yi])
+    # for i in vis:
+    #     print(i)
+    return vis[fx][fy]
+n,m = map(int,input().split())
+bd = [list(input()) for i in range(n)]
+gbg = []
+for x in range(n):
+    for y in range(m):
+        if bd[x][y] == 'S':
+            sx,sy = [x,y]
+            bd[x][y] = '.'
+        elif bd[x][y] == 'F':
+            fx,fy = [x,y]
+            bd[x][y] = '.'
+        elif bd[x][y] == 'g':
+            gbg.append([x,y])
+for x,y in gbg:
+    for a,b in near:
+        xi, yi = x+a, y+b
+        if 0 <= xi < n and 0 <= yi < m:
+            if bd[xi][yi] == '.':
+                bd[xi][yi] = 'n'
+# for i in bd:
+#     print(i)
+for i in go():
+    print(i,end=' ')
+
+'''''
+
 #
 # import sys
 # # sys.stdin = open('1445', 'r')
@@ -139,6 +282,14 @@
 #                         q.append((trashcnt, movedcnt, iy, ix))
 #
 #
+#
+#
+#                     # pprint(vis)
+#
+#
+#
+#
+#
 # for y in range(N):
 #     for x in range(M):
 #         if mymap[y][x] == 'S':
@@ -156,76 +307,9 @@
 # ans = []
 # solve(sy, sx, fy, fx)
 # ans = sorted(ans)
+# # print(ans)
+# # # print(vis)
+# # for v in vis:
+# #     print(v)
 # print(vis[fy][fx][0], vis[fy][fx][1])
 #
-
-
-
-
-
-''''''''''''''''
-
-from collections import deque
-near = [[-1,0],[0,1],[1,0],[0,-1]]
-def go():
-    q = deque([[0,0,sx,sy]])
-    vis = [[[9999,9999] for i in range(m)] for i in range(n)]
-    while q:
-        cg,cn,x,y = q.popleft()
-        for a,b in near:
-            xi, yi = x+a, y+b
-            if 0 <= xi < n and 0 <= yi < m:
-                if bd[xi][yi] == 'g':
-                    if vis[xi][yi][0] > cg:
-                        vis[xi][yi] = [cg,cn]
-                        q.append([cg+1, cn, xi, yi])
-                    elif vis[xi][yi][0] == cg:
-                        if vis[xi][yi][1] > cn:
-                            vis[xi][yi] = [cg,cn]
-                            q.append([cg+1, cn, xi, yi])
-                elif bd[xi][yi] == 'n':
-                    if vis[xi][yi][0] > cg:
-                        vis[xi][yi] = [cg,cn]
-                        q.append([cg, cn+1, xi, yi])
-                    elif vis[xi][yi][0] == cg:
-                        if vis[xi][yi][1] > cn:
-                            vis[xi][yi] = [cg,cn]
-                            q.append([cg, cn+1, xi, yi])
-                elif bd[xi][yi] == '.':
-                    if vis[xi][yi][0] > cg:
-                        vis[xi][yi] = [cg,cn]
-                        q.append([cg,cn,xi,yi])
-                    elif vis[xi][yi][0] == cg:
-                        if vis[xi][yi][1] > cn:
-                            vis[xi][yi] = [cg,cn]
-                            q.append([cg,cn,xi,yi])
-    # for i in vis:
-    #     print(i)
-    return vis[fx][fy]
-n,m = map(int,input().split())
-bd = [list(input()) for i in range(n)]
-gbg = []
-for x in range(n):
-    for y in range(m):
-        if bd[x][y] == 'S':
-            sx,sy = [x,y]
-            bd[x][y] = '.'
-        elif bd[x][y] == 'F':
-            fx,fy = [x,y]
-            bd[x][y] = '.'
-        elif bd[x][y] == 'g':
-            gbg.append([x,y])
-for x,y in gbg:
-    for a,b in near:
-        xi, yi = x+a, y+b
-        if 0 <= xi < n and 0 <= yi < m:
-            if bd[xi][yi] == '.':
-                bd[xi][yi] = 'n'
-# for i in bd:
-#     print(i)
-for i in go():
-    print(i,end=' ')
-
-'''''
-
-
