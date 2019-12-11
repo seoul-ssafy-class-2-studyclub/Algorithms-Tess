@@ -1,55 +1,33 @@
-##### 고쳐야한다.
-import heapq
-
+'''짝홀 배열 만들어서 저장할 것'''
+import collections
 N, K = map(int, input().split())
-
-
-def solve(N):
-    dictcheck = dict()
-    q = []
-    heapq.heappush(q, (0, N))
+import sys
+input = sys.stdin.readline
+def solve(n, k):
+    # -1로 채워서 시작은 0으로, 해서 분간해준다.
+    save = [[-1] * 500001 for _ in range(2)]
+    save[0][n] = 0
+    q = collections.deque([n])
+    cnt = 0
     while q:
+        if save[cnt%2][k] >= 0: #
+            print(cnt)
+            return
+
+        cnt += 1 #  n과 k의 시간대를 맞춰줘서 움직이도록 한다.
         for _ in range(len(q)):
+            n = q.popleft()
+            idx = cnt % 2
+            for fin in [(n + 1), (n - 1), (n * 2)]:
+                if 0 <= fin <= 500000 and save[idx][fin] == -1:
+                    save[idx][fin] = cnt + 1
+                    q.append(fin)
 
-            cnt, n = heapq.heappop(q)
+        k += cnt
+        if k > 500000: #
+            print(-1)
+            return
 
-            if n == -1:
-                continue
+solve(N, K)
 
-            if n == K:
-                return cnt
-            dictcheck[n] = 1
 
-            # 수빈
-            count = [(n + 1), (n - 1), (n * 2)]
-            for fin in count:
-                if 0 <= fin  <= 500000 and dictcheck.get(fin ) == None:
-                    dictcheck[fin ] = 1
-                    heapq.heappush(q, (cnt + 1, fin))
-                if fin > 500000:
-                    dictcheck[fin ] = 1
-                    heapq.heappush(q, (cnt+1, -1))
-
-        for _ in range(len(q)):
-
-            cnt, n = heapq.heappop(q)
-
-            if n == -1:
-                continue
-
-            if n == K:
-                return cnt
-            dictcheck[n] = 1
-
-            # 동생: 가속도가 붙는다
-            count = [(n + 1, cnt), (n - 1, cnt), (n * 2, cnt)]
-            for fin, time in count:
-                if 0 <= fin + time <= 500000 and dictcheck.get(fin + time) == None:
-                    dictcheck[fin + time] = 1
-                    heapq.heappush(q, (cnt + 1, fin + time))
-                if fin + time > 500000:
-                    dictcheck[fin + time] = 1
-                    heapq.heappush(q, (cnt+1, -1))
-    return -1
-
-print(solve(N))
