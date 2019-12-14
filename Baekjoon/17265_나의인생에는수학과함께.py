@@ -4,6 +4,7 @@ import sys
 input = sys.stdin.readline
 N = int(input())
 mymap = [list(map(str, input().split())) for _ in range(N)]
+
 mymin = 1e9
 mymax = -1e9
 q = []                    # 아직 연산자가 없거나, 사용한적 없으면 -1

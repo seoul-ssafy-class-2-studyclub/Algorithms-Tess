@@ -3,12 +3,12 @@ sys.stdin = open('2252.txt', 'r')
 import collections
 
 N, M = map(int, input().split())
-inDegree = [0]*(N+1)
-adj_list = [[] for _ in range(N+1)]
+inDegree = [0]*(N+1) # 진입차수 정보
+adj_list = [[] for _ in range(N+1)] # 인접리스트 구현
 for _ in range(M):
     s, e = map(int, input().split())
-    inDegree[e] += 1
-    adj_list[s].append(e)
+    inDegree[e] += 1 # 나에게 진입하는 수
+    adj_list[s].append(e) # 진출할 인접리스트 정보
 
 q = collections.deque([])
 for idx in range(1, N+1):
