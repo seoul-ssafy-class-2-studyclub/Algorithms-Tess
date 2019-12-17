@@ -35,7 +35,8 @@ thisYear은 위상정렬의 결과값이 들어가는 구조
 진입차수가 0인 노드를 queue에 넣고, queue에서 하나를 빼고 진입차수를 줄이고,
 '''
 
-
+import sys
+input = sys.stdin.readline
 
 # 높은 등수를 가장 먼저 방문하기 위해 진입으로 만들 것
 n = int(input())
@@ -48,6 +49,7 @@ for _ in range(n):
     arr = [[0]*(tiNum+1) for _ in range(tiNum+1)]
     ## 진입차수 생성
     inDegree = [0]*(tiNum+1)
+
     for i in range(0, tiNum):
         for j in range(i+1, tiNum):
             arr[lastYear[i]][lastYear[j]] = 1
@@ -63,12 +65,12 @@ for _ in range(n):
             arr[e][s] = 1
             inDegree[s] += 1
             inDegree[e] -= 1
-        else:
+            continue
+        if arr[s][e] == 0:
             arr[s][e] = 1
             arr[e][s] = 0
             inDegree[s] -= 1
             inDegree[e] += 1
-
 
     thisYear = [0]*(tiNum+1) ## 들어갈 자리를 만들어준다.
 
@@ -76,24 +78,36 @@ for _ in range(n):
     for idx in range(1, tiNum+1):
         if inDegree[idx] == 0: # 0 이라면 시작점이 될 수 있다.
             q.append(idx)
+            ans = str(idx)
 
-    startpoint = len(q) # 이걸로 세 종류의 답을 도출해낸다
-    if startpoint == 1:
-        i = 1
-        while q:
+    # 중간 q 개수 세는거
+    # q에는 무조건 하나만 들어가야 한다.
+    i = 1
+    while True:
+        if len(q) == 1:
             s = q.pop(0)
             thisYear[i] = s
+            i += 1
             for j in range(1, tiNum+1):
                 if arr[s][j] == 1:
                     inDegree[j] -= 1
                     if inDegree[j] == 0:
                         q.append(j)
-            i += 1
-        print(' '.join(map(str, thisYear[1:])))
-    if startpoint == 0:
-        print('IMPOSSIBLE')
-    if startpoint > 1:
-        print('?')
+                        ans += ' ' + str(j)
+
+        if i < tiNum and len(q) == 0: # cycle
+            ans = 'IMPOSSIBLE'
+            break
+
+        elif len(q) >= 2: # 같은 등수
+            ans = '?'
+            break
+
+        elif len(q) == 0: # 제대로 된 경우
+            ans = ans
+            break
+
+    print(ans)
 
 
 
