@@ -72,30 +72,27 @@ D[a][b] == INF 이면 0을 출력하면 된다.
 '''
 import sys
 input = sys.stdin.readline
-n,m=map(int,input().split())
+n, m = map(int,input().split())
 
-Max = 1e9
-S = [[Max]*(n+1) for _ in range(n+1)]
+S = [[0]*(n+1) for _ in range(n+1)]
 for i in range(m):
-    a,b = map(int,input().split())
-    S[a][b] = 1
+    a, b = map(int,input().split())
+    S[a][b] = -1
+    S[b][a] = 1
 
 for k in range(n+1): # 거쳐 가는 곳
     for i in range(n+1): # 시작
         for j in range(n+1): # 도착
-            S[i][j] = min(S[i][j], S[k][j]+S[i][k])
+            # print(S)
+            # 거쳐가는 곳이 0이면 안된다. 모르면 거쳐갈 수 없음
+            if S[i][k] == S[k][j] and S[i][k] != 0:
+                S[i][j] = S[i][k]
+                S[j][i] = - S[i][k]
 res = []
 for i in range(int(input())):
-    a,b = map(int,input().split())
-    if S[a][b] != Max:
-        res += ['-1']
-        continue
-    elif S[b][a] != Max:
-        res += ['1']
-        continue
-    else:
-        res += ['0']
-print('\n'.join(res))
+    a, b = map(int,input().split())
+    res.append(S[a][b])
+print('\n'.join(map(str, res)))
 
 
 
