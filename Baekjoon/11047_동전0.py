@@ -17,26 +17,17 @@
 
 
 N, K = map(int, input().split())
-Ki = K
 data = []
 for _ in range(N):
     data += [int(input())]
 
-temp = [1e9]*10
 i = 0
-while Ki != 0:
-    i = 0
-
-    for idx in range(len(data)):
-
-        t = Ki//data[-idx]
-        if t == 0:
-            continue
-
-        elif 1 <= t and t < temp[i]:
-            temp[i] = t
-
-        if idx == len(data)-1:
-            Ki = data[i]
-            i += 1
-print(temp)
+if K != 0:
+    for idx in range(len(data)-1, -1, -1):
+        coin = data[idx]
+        t = K//coin # 각 코인별로 ki를 나눈 값
+        i += t
+        K = K - (coin*t)
+        if K == 0:
+            break
+print(i)
