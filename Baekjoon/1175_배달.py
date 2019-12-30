@@ -1,15 +1,11 @@
 ## BFS
 
-
-
 import sys
 
 from pprint import pprint
 sys.stdin = open('1175.txt', 'r')
 
-
 import heapq
-
 def solve(status):
     global nbd
     direction = [(-1,0), (1,0), (0,-1), (0,1)]
@@ -19,11 +15,11 @@ def solve(status):
     # 시작의 status는 4가지 경우가 있다.
     heapq.heappush(q, (0, 0, minsik, status))
     while q:
-        mins, Cs, current, status = heapq.heappop(q)
+        Cs, mins, current, status = heapq.heappop(q)
         cury, curx = current[0], current[1]
 
-        if Cs == -2:
-            return mins # -1을 해야 할 수도 있다.
+        # if Cs == -2:
+        #     return mins
 
         for i in range(4):
             if i != status:
@@ -31,22 +27,24 @@ def solve(status):
                 nxty = nxty + cury
                 nxtx = nxtx + curx
 
-                if 0 <= nxty < N and 0 <= nxtx < M and visit[nxty][nxtx] == False:
+                if 0 <= nxty < N and 0 <= nxtx < M and visit[nxty][nxtx] == False and nbd[nxty][nxtx] != '#':
                     if nbd[nxty][nxtx] == '.':
-                        heapq.heappush(q, (mins+1, Cs, (nxty, nxtx), i))
+                        heapq.heappush(q, (Cs, mins+1, (nxty, nxtx), i))
                         visit[nxty][nxtx] = True
+                        continue
 
                     if nbd[nxty][nxtx] == 'C' and Cs == 0:
-                        heapq.heappush(q, (mins+1, Cs-1, (nxty, nxtx), i))
+                        heapq.heappush(q, (Cs-1, mins+1, (nxty, nxtx), i))
                         nbd[nxty][nxtx] = '.'
                         visit[nxty][nxtx] = True
                         visit = [[False]*M for _ in range(N)]
                         continue
 
                     if nbd[nxty][nxtx] == 'C' and Cs == -1:
-                        heapq.heappush(q, (mins+1, Cs-1, (nxty, nxtx), i))
+                        heapq.heappush(q, (Cs-1, mins+1, (nxty, nxtx), i))
                         nbd[nxty][nxtx] = '.'
                         visit[nxty][nxtx] = True
+                        return mins+1
     return 1e9
 
 N, M = map(int, input().split())
@@ -69,4 +67,7 @@ for st in range(4):
     if mymin > result:
         mymin = result
 
-print(mymin)
+if mymin == 1e9:
+    print(-1)
+else:
+    print(mymin)
