@@ -160,7 +160,9 @@ direction = [(-1,0), (1,0), (0,-1), (0,1)]
 def solve(status):
     global nbd, mymin
     # 4차원으로 관리해야했는데............
+
     visit = [[[[False]*3 for _ in range(4)] for _ in range(M)] for _ in range(N)]
+    pprint(visit)
     # visit[minsik[0]][minsik[1]][status][0] = True # 처음에는 항상 True 처리 하고 시작한다.
     q = []
     # 시작의 status는 4가지 경우가 있다.
