@@ -2,8 +2,13 @@
 
 #### [Algorithms 표준코드 및 이론정리](https://github.com/tesschung/TIL-garden/tree/master/Algorithms)
 
-GOAL! 
-PRO
+알고리즘을 공부하다보면 마냥 복잡해 보이던 것들이 점점 간명하게 보인다.
+어떤 문제를 해결하기 위해 중요한 것과 중요하지 않은 것을 구분할 수 있고, 문제도 단순화해서 볼 수 있다.
+
+알고리즘이 명확하다는 것은 모호하지 않고 이해하기 쉽다는 뜻이다.
+
+Goal!
+*간명한 코드*를 짜자!
 
 파일명:
 문제번호_문제제목_알고리즘.py
@@ -40,6 +45,8 @@ Directory:
     - Line&Naver
     
 - Programmers (프로그래머스 문제)
+
+- LeetCode
 
 ---
 
