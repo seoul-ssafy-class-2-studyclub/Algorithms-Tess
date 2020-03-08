@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="537710a8-2056-4813-8403-303764fcdc9f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/LeetCode/Java/src/ValidParentheses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LeetCode/Java/src/TwoSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeetCode/Java/src/TwoSum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1572255700785</updated>
       <workItem from="1583591566646" duration="251000" />
-      <workItem from="1583591843937" duration="936000" />
+      <workItem from="1583591843937" duration="3740000" />
     </task>
     <servers />
   </component>
