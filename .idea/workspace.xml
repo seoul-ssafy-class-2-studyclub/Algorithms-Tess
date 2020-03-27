@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="537710a8-2056-4813-8403-303764fcdc9f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Baekjoon/Java/ps/src/B1012/유기농배추/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Baekjoon/Java/2583.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Baekjoon/Java/helloworld.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Baekjoon/Java/helloworld.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Baekjoon/Java/welove.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Baekjoon/Java/welove.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Baekjoon/Java/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Baekjoon/Java/.idea/Java.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Baekjoon/Java/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Baekjoon/Java/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Baekjoon/Java/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Baekjoon/Java/ps/ps.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Baekjoon/Java/ps/src/B1012/유기농배추/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +81,7 @@
       <updated>1572255700785</updated>
       <workItem from="1583591566646" duration="251000" />
       <workItem from="1583591843937" duration="5219000" />
-      <workItem from="1585318579408" duration="821000" />
+      <workItem from="1585318579408" duration="942000" />
     </task>
     <servers />
   </component>
