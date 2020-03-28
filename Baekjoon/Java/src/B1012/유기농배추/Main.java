@@ -11,6 +11,8 @@ public class Main {
     static int M;
 
     public static void main(String[] args) throws Exception {
+        // BufferedReader
+        // 버퍼를 이용해서 읽고 쓰는 함수
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int T = Integer.parseInt(br.readLine());
