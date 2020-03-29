@@ -16,7 +16,7 @@ public class Main {
             String[] str = br.readLine().split(" ");
             A = Integer.parseInt(str[0]);
             B = Integer.parseInt(str[1]);
-            System.out.println("Case #"+i+": "+(A+B));
+            System.out.println("Case #"+i+": "+ A+" + "+B+" = "+(A+B));
         }
     }
 }
