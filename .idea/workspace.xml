@@ -20,8 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="537710a8-2056-4813-8403-303764fcdc9f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Baekjoon/Python/11866.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Baekjoon/Python/test01.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Study.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Study.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -66,14 +64,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Baekjoon" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../politech/2020_kopo_java" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -83,11 +81,14 @@
       <recent name="$PROJECT_DIR$/Baekjoon/Python" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.test01">
     <configuration name="11866" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Study" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="C:\Users\seung\OneDrive\바탕 화면\tesschung.github\Algorithms-Tess\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Baekjoon/Python" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -103,8 +104,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test01" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Study" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pre_Exam/YGY" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Pre_Exam/YGY/test01.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test01" />
         <item itemvalue="Python.11866" />
         <item itemvalue="Python.11866" />
       </list>
@@ -129,6 +153,21 @@
       <workItem from="1586741680027" duration="80000" />
       <workItem from="1586741769878" duration="215000" />
       <workItem from="1586741989935" duration="379000" />
+      <workItem from="1588322056635" duration="4314000" />
+      <workItem from="1588722240260" duration="454000" />
+      <workItem from="1588726763478" duration="2000" />
+      <workItem from="1588837863226" duration="3000" />
+      <workItem from="1588839400152" duration="2000" />
+      <workItem from="1588897826446" duration="651000" />
+      <workItem from="1588912691884" duration="644000" />
+      <workItem from="1589035653405" duration="8000" />
+      <workItem from="1589068027003" duration="600000" />
+      <workItem from="1589324990378" duration="327000" />
+      <workItem from="1589454557853" duration="2000" />
+      <workItem from="1589789910676" duration="647000" />
+      <workItem from="1589860332869" duration="3000" />
+      <workItem from="1589860400128" duration="602000" />
+      <workItem from="1589984987365" duration="13000" />
     </task>
     <servers />
   </component>
@@ -156,10 +195,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="41" y="77" key="#Plugins/0.0.1536.824@0.0.1536.824" timestamp="1586741853346" />
-    <state x="0" y="0" key="#Project_Structure" timestamp="1586741656437">
+    <state x="0" y="0" key="#Project_Structure" timestamp="1588322071863">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="0" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1586741656437" />
+    <state x="0" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1588322071863" />
     <state x="230" y="117" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1586741968755">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -168,10 +207,42 @@
       <screen x="0" y="23" width="1440" height="834" />
     </state>
     <state x="494" y="347" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1440.834@0.23.1440.834" timestamp="1585318664273" />
-    <state x="275" y="153" key="FileChooserDialogImpl" timestamp="1586742298515">
+    <state x="275" y="153" key="FileChooserDialogImpl" timestamp="1589984997099">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="275" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586742298515" />
+    <state x="275" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589984997099" />
+    <state width="830" height="155" key="GridCell.Tab.0.bottom" timestamp="1588722694600">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="830" height="155" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588722694600" />
+    <state width="830" height="155" key="GridCell.Tab.0.center" timestamp="1588722694600">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="830" height="155" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588722694600" />
+    <state width="830" height="155" key="GridCell.Tab.0.left" timestamp="1588722694600">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="830" height="155" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588722694600" />
+    <state width="830" height="155" key="GridCell.Tab.0.right" timestamp="1588722694600">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="830" height="155" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588722694600" />
+    <state width="914" height="261" key="GridCell.Tab.1.bottom" timestamp="1588334494466">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="914" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588334494466" />
+    <state width="914" height="261" key="GridCell.Tab.1.center" timestamp="1588334494466">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="914" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588334494466" />
+    <state width="914" height="261" key="GridCell.Tab.1.left" timestamp="1588334494466">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="914" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588334494466" />
+    <state width="914" height="261" key="GridCell.Tab.1.right" timestamp="1588334494466">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="914" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588334494466" />
     <state x="70" y="0" width="1024" height="836" key="SettingsEditor" timestamp="1586742341114">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -189,5 +260,8 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="111" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1586741823505" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Algorithms_Tess$test01.coverage" NAME="test01 Coverage Results" MODIFIED="1588722390961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pre_Exam/YGY" />
   </component>
 </project>
